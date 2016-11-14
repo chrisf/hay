@@ -413,6 +413,41 @@ pre {
   box-shadow: 0 5px 0 #52D9FB;
 }
 
+.get-started__button:active .get-started__ripple {
+  background: #B76AF8;
+}
+
+.get-started__button:active .get-started__ripple--one {
+  opacity: 0.3;
+  transition-delay: 0ms;
+}
+
+.get-started__button:active .get-started__ripple--two {
+  opacity: 0.4;
+  transition-delay: 30ms;
+}
+
+.get-started__button:active .get-started__ripple--three {
+  opacity: 0.5;
+  transition-delay: 60ms;
+}
+
+.get-started__button:active .get-started__ripple--four {
+  opacity: 0.6;
+  transition-delay: 90ms;
+}
+
+.get-started__button:active .get-started__ripple--five {
+  opacity: 0.7;
+  transition-delay: 120ms;
+}
+
+.get-started .button:active {
+  background: #B76AF8;
+  margin-top: 5px;
+  box-shadow: none;
+}
+
 .get-started--fixed {
   z-index: 998;
 }
