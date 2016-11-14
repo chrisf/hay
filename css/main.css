@@ -521,7 +521,7 @@ pre {
 
 
 .about {
-  padding: 70px 0 120px;
+  padding: 70px 0;
   position: relative;
   z-index: 200;
 }
