@@ -379,6 +379,35 @@ pre {
   z-index: 100;
 }
 
+.get-started__button:hover .get-started__ripple {
+  background: #52D9FB;
+}
+
+.get-started__button:hover .get-started__ripple--one {
+  opacity: 0.7;
+  transition-delay: 0ms;
+}
+
+.get-started__button:hover .get-started__ripple--two {
+  opacity: 0.6;
+  transition-delay: 30ms;
+}
+
+.get-started__button:hover .get-started__ripple--three {
+  opacity: 0.5;
+  transition-delay: 60ms;
+}
+
+.get-started__button:hover .get-started__ripple--four {
+  opacity: 0.4;
+  transition-delay: 90ms;
+}
+
+.get-started__button:hover .get-started__ripple--five {
+  opacity: 0.3;
+  transition-delay: 120ms;
+}
+
 .get-started .button:hover {
   background: #5DFFFD;
   box-shadow: 0 5px 0 #52D9FB;
@@ -402,10 +431,6 @@ pre {
   background: #58FBA0;
 }
 
-.get-started__ripples--blue .get-started__ripple {
-  background: #52D9FB;
-}
-
 .get-started__ripple {
   display: block;
   position: absolute;
@@ -422,6 +447,7 @@ pre {
   height: 100px;
   z-index: 60;
   opacity: 0.5;
+  transition-delay: 120ms;
 }
 
 .get-started__ripple--two {
@@ -429,6 +455,7 @@ pre {
   height: 200px;
   z-index: 50;
   opacity: 0.4;
+  transition-delay: 90ms;
 }
 
 .get-started__ripple--three {
@@ -436,12 +463,14 @@ pre {
   height: 300px;
   z-index: 40;
   opacity: 0.3;
+  transition-delay: 60ms;
 }
 .get-started__ripple--four {
   width: 400px;
   height: 400px;
   z-index: 30;
   opacity: 0.2;
+  transition-delay: 30ms;
 }
 .get-started__ripple--five {
   width: 500px;
