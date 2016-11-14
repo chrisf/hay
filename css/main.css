@@ -618,11 +618,11 @@ p a {
 
 .footer {
   background: #20232B;
-  padding: 100px 0;
   color: #fff;
 }
 
 .footer .container {
+  padding: 100px 0;
   display: flex;
 }
 
@@ -657,7 +657,8 @@ p a {
 }
 
 .footer__author {
-  width: 300px;
+  text-align: center;
+  padding: 10px 0;
 }
 
 .footer__author a {
