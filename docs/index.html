@@ -62,7 +62,7 @@
 
     <div class="get-started">
       <div class="get-started__container">
-        <span class="get-started__ripples">
+        <span class="get-started__ripples get-started__ripples--green">
           <span class="get-started__ripple get-started__ripple--one"></span>
           <span class="get-started__ripple-background get-started__ripple-background--one"></span>
           <span class="get-started__ripple get-started__ripple--two"></span>
@@ -175,7 +175,7 @@
           </div>
 
           <div class="feature__description">
-            <h4>easy configuration</h4>
+            <h4>easily configurable</h4>
 
             <p>
               you can configure hay with JavaScript, JSON or YAML. it's really not fussy.
@@ -287,9 +287,8 @@
         startRippling = true;
         endRippling = false;
 
-        [].slice.call(ripples).forEach(function (ripple) {
-          ripple.style.background = '#52D9FB';
-        });
+        ripplesContainer.classList.remove('get-started__ripples--green');
+        ripplesContainer.classList.add('get-started__ripples--blue');
 
         clearTimeout(endTimeout);
 
@@ -315,9 +314,8 @@
 
         clearTimeout(startTimeout);
 
-        [].slice.call(ripples).forEach(function (ripple) {
-          ripple.style.background = '#58FBA0';
-        });
+        ripplesContainer.classList.add('get-started__ripples--green');
+        ripplesContainer.classList.remove('get-started__ripples--blue');
 
         function ripple(index) {
           if (index === 0) return;

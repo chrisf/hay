@@ -394,6 +394,18 @@ pre {
   overflow: hidden;
 }
 
+.get-started__ripples {
+  pointer-events: none;
+}
+
+.get-started__ripples--green .get-started__ripple {
+  background: #58FBA0;
+}
+
+.get-started__ripples--blue .get-started__ripple {
+  background: #52D9FB;
+}
+
 .get-started__ripple {
   display: block;
   position: absolute;
@@ -401,7 +413,6 @@ pre {
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   border-radius: 50%;
-  background: #58FBA0;
   z-index: 1;
   transition: opacity 0.1s linear;
 }
@@ -438,7 +449,6 @@ pre {
   z-index: 20;
   opacity: 0.1;
 }
-
 
 .get-started__ripple-background {
   display: block;
