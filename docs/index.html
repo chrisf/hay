@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>hay</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="header header--main header--fixed header--right">
+      <div class="container">
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="/docs" class="navigation__link">
+                Docs
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="/docs" class="navigation__link">
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="intro">
+      <div class="intro__background">
+        <a href="/" class="logo"></a>
+        <h3>simple static website builder</h3>
+      </div>
+
+      <div class="console">
+        <header class="console__header">
+          hay
+        </header>
+        <table style="border-spacing: 0">
+          <tbody>
+            <tr>
+              <td class="gutter" style="text-align: center">
+                <pre><span class="dollar">$</span></pre>
+                <pre><span class="dollar">$</span></pre>
+                <pre><span class="dollar">$</span></pre>
+                <pre><span class="dollar">$</span></pre>
+              </td>
+              <td class="code">
+                <pre><span class="pink">yarn</span> global add <span class="green">hay</span> <span class="dark-blue"># or npm install -g hay</span></pre>
+                <pre><span class="blue">hay</span> new my-website</pre>
+                <pre><span class="pink">cd</span> my-website</pre>
+                <pre><span class="blue">hay</span> serve</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="get-started">
+      <div class="get-started__container">
+        <span class="get-started__ripples">
+          <span class="get-started__ripple get-started__ripple--one"></span>
+          <span class="get-started__ripple-background get-started__ripple-background--one"></span>
+          <span class="get-started__ripple get-started__ripple--two"></span>
+          <span class="get-started__ripple-background get-started__ripple-background--two"></span>
+          <span class="get-started__ripple get-started__ripple--three"></span>
+          <span class="get-started__ripple-background get-started__ripple-background--three"></span>
+          <span class="get-started__ripple get-started__ripple--four"></span>
+          <span class="get-started__ripple-background get-started__ripple-background--four"></span>
+          <span class="get-started__ripple get-started__ripple--five"></span>
+          <span class="get-started__ripple-background get-started__ripple-background--five"></span>
+        </span>
+
+        <a href="/get-started" class="button button--large">
+          Get started
+        </a>
+      </div>
+    </div>
+
+    <header class="header header--left header--has-background header--not-fixed">
+      <div class="container">
+        <a href="/" class="logo"></a>
+      </div>
+    </header>
+
+    <section class="about">
+      <div class="container">
+        <ul class="about__list">
+          <li class="about__item">
+            <div class="about__icon">
+              <span class="typcn typcn-flash-outline" style="color: #f8d26a;"></span>
+            </div>
+
+            <h4>easy &amp; simple</h4>
+
+            <p>
+              hay builds your website in a flash - converting your website into static assets ready for deployment anywhere
+            </p>
+          </li>
+          <li class="about__item">
+            <div class="about__icon">
+              <span class="typcn typcn-device-laptop" style="color: #f86ae9;"></span>
+            </div>
+            <h4>write whatever</h4>
+
+            <p>
+              don't fancy using the inbuilt markdown support to write your pages or blog posts? simply swap it out and write in the format that you want
+            </p>
+          </li>
+          <li class="about__item">
+            <div class="about__icon">
+              <span class="typcn typcn-infinity-outline" style="color: #b76af8;"></span>
+            </div>
+
+            <h4>extra as standard</h4>
+
+            <p>
+              hay can paginate your blog posts, deploy to GitHub pages, and even butter your toast<sup>*</sup> at your request
+            </p>
+
+            <p class="about__clarification">
+              * sorry this was a lie
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature">
+          <div class="feature__main">
+            <div class="console">
+              <header class="console__header">
+                hay
+              </header>
+              <div class="file-name">
+                <span class="file-name__file file-name__file--selected">
+                  hay.config.json
+                </span>
+                <span class="file-name__file">
+                  hay.config.js
+                </span>
+                <span class="file-name__file">
+                  hay.config.yml
+                </span>
+              </div>
+              <table style="border-spacing: 0">
+                <tbody>
+                <tr>
+                  <td class="gutter" style="text-align: center">
+                    <pre><span class="dollar">1</span></pre>
+                    <pre><span class="dollar">2</span></pre>
+                    <pre><span class="dollar">3</span></pre>
+                    <pre><span class="dollar">4</span></pre>
+                    <pre><span class="dollar">5</span></pre>
+                    <pre><span class="dollar">6</span></pre>
+                  </td>
+                  <td class="code">
+                    <pre>{</pre>
+                    <pre> <span class="pink">"name"</span>: <span class="orange">"hay"</span>,</pre>
+                    <pre> <span class="pink">"description"</span>: <span class="orange">"simple static website..."</span>,</pre>
+                    <pre> <span class="pink">"url"</span>: <span class="orange">"https://hay.js.org"</span>,</pre>
+                    <pre> <span class="pink">"paginate"</span>: <span class="orange">"true"</span></pre>
+                    <pre>}</pre>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="feature__description">
+            <h4>easy configuration</h4>
+
+            <p>
+              you can configure hay with JavaScript, JSON or YAML. it's really not fussy.
+            </p>
+
+            <p>
+              <a href="/docs">check out the docs</a> for all the stuff that can be configured
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__author">
+          <a href="/" class="logo-only"></a>
+          by <a href="https://ryanclark.me" target="_blank">Ryan Clark</a>
+        </div>
+
+        <div class="footer__links">
+          <span class="footer__link-header">Docs</span>
+
+          <a href="/docs">Documentation</a>
+          <a href="/get-started">Get Started</a>
+          <a href="/example-project">Example Project</a>
+        </div>
+        <div class="footer__links">
+          <span class="footer__link-header">Source</span>
+
+          <a target="_blank" href="https://github.com/rynclark/hay">GitHub</a>
+          <a target="_blank" href="https://github.com/rynclark/hay/blob/master/CONTRIBUTING.md">Contribute</a>
+          <a target="_blank" href="https://github.com/rynclark/hay/issues">Issues</a>
+          <a target="_blank" href="https://github.com/rynclark/hay/blob/master/CHANGELOG.md">CHANGELOG</a>
+        </div>
+        <div class="footer__links">
+          <span class="footer__link-header">Other Projects</span>
+
+          <a target="_blank" href="https://nglr.io">@nglr</a>
+          <a target="_blank" href="https://parceljs.com">parceljs</a>
+          <a target="_blank" href="https://github.com/rynclark">rynclark</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/rafscroll.js"></script>
+    <script>
+      var consoleElement = document.querySelector('.console');
+      var rightHeader = document.querySelector('.header--right');
+      var leftHeader = document.querySelector('.header--left');
+      var getStarted = document.querySelector('.get-started');
+      var logo = leftHeader.querySelector('.logo');
+      var ripplesContainer = document.querySelector('.get-started__ripples');
+      var introHeight = document.querySelector('.intro').clientHeight;
+      var introBgHeight = document.querySelector('.intro__background').clientHeight;
+
+      var inactive = true;
+      var getStartedFixed = false;
+      var timeout;
+      var isScrolling = false;
+
+      window.addEventListener('scroll', function () {
+        isScrolling = true;
+
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          isScrolling = false;
+        }, 200);
+      });
+
+      new rafscroll(function () {
+        if (!isScrolling) return;
+
+        logo.style.opacity = window.scrollY / introBgHeight;
+        ripplesContainer.style.opacity = 1 - (window.scrollY / (introBgHeight + 200));
+        consoleElement.style.opacity = 1 - (window.scrollY / (introHeight + 100));
+
+        if (window.scrollY >= introBgHeight && inactive) {
+          inactive = false;
+          leftHeader.classList.remove('header--not-fixed');
+          rightHeader.classList.add('header--has-background');
+        } else if (window.scrollY < 250 && !inactive) {
+          inactive = true;
+          leftHeader.classList.add('header--not-fixed');
+          rightHeader.classList.remove('header--has-background');
+        }
+
+        if (window.scrollY >= introHeight + 30 && !getStartedFixed) {
+          getStartedFixed = true;
+          getStarted.classList.add('get-started--fixed');
+        } else if (window.scrollY < introHeight + 30 && getStartedFixed) {
+          getStartedFixed = false;
+          getStarted.classList.remove('get-started--fixed');
+        }
+      });
+
+      var startRippling = false;
+      var endRippling = false;
+
+      var getStartedButton = document.querySelector('.get-started .button');
+      var ripples = document.querySelectorAll('.get-started__ripple');
+
+      var startTimeout;
+      var endTimeout;
+      getStartedButton.addEventListener('mouseover', function () {
+        if (startRippling) return;
+
+        startRippling = true;
+        endRippling = false;
+
+        [].slice.call(ripples).forEach(function (ripple) {
+          ripple.style.background = '#52D9FB';
+        });
+
+        clearTimeout(endTimeout);
+
+        function ripple(index) {
+          if (index === ripples.length) return;
+
+          ripples[index].style.opacity = (ripples.length - index) / 10 + 0.2;
+          startTimeout = setTimeout(function () {
+            ripple(index + 1);
+          }, index * 20);
+        }
+
+        ripple(0);
+      });
+
+      getStartedButton.addEventListener('mouseout', function () {
+        if (endRippling) {
+          return;
+        }
+
+        endRippling = true;
+        startRippling = false;
+
+        clearTimeout(startTimeout);
+
+        [].slice.call(ripples).forEach(function (ripple) {
+          ripple.style.background = '#58FBA0';
+        });
+
+        function ripple(index) {
+          if (index === 0) return;
+
+          var i = (ripples.length - index + 1);
+          ripples[index - 1].style.opacity = i / 10;
+          setTimeout(ripple.bind(null, index - 1), i * 20);
+        }
+
+        ripple(ripples.length);
+      });
+    </script>
+
+  </body>
+</html>
