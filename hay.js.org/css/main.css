@@ -109,7 +109,7 @@ body {
 
 .header--not-fixed {
   position: absolute;
-  top: 250px;
+  top: 400px;
 }
 
 .header .logo {
@@ -128,6 +128,11 @@ body {
   width: 126px;
   height: 53px;
   display: block;
+}
+
+.logo--big {
+  width: 200px;
+  height: 106px;
 }
 
 .logo-only {
@@ -184,8 +189,8 @@ body {
 
 .intro__background {
   background-color: #2D313A;
-  height: 250px;
-  padding-top: 20px;
+  height: 400px;
+  padding-top: 70px;
 }
 
 .intro .logo {
@@ -556,7 +561,7 @@ pre {
 
 
 .about {
-  padding: 70px 0;
+  padding: 150px 0;
   position: relative;
   z-index: 200;
 }
@@ -617,7 +622,7 @@ pre {
 .features {
   background: #FBFCFF;
   position: relative;
-  padding: 70px 0;
+  padding: 150px 0;
 }
 
 .features .console {

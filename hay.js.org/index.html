@@ -32,7 +32,7 @@
 
     <section class="intro">
       <div class="intro__background">
-        <a href="/" class="logo"></a>
+        <a href="/" class="logo logo--big"></a>
         <h3>simple static website builder</h3>
       </div>
 
@@ -262,7 +262,7 @@
           inactive = false;
           leftHeader.classList.remove('header--not-fixed');
           rightHeader.classList.add('header--has-background');
-        } else if (window.scrollY < 250 && !inactive) {
+        } else if (window.scrollY < 400 && !inactive) {
           inactive = true;
           leftHeader.classList.add('header--not-fixed');
           rightHeader.classList.remove('header--has-background');
