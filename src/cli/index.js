@@ -7,7 +7,8 @@ import { Console } from './console';
 const pkgInfo = require('../../package.json');
 
 type HayCommand = {
-  configure?: Function
+  configure?: Function,
+  run: () => Promise<void>
 };
 
 let [node, hay, name, ...endArgs] = process.argv;
