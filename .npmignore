@@ -1,0 +1,8 @@
+/node_modules
+/src
+/.editorconfig
+/.babelrc
+/.flowconfig
+/.npmignore
+/.idea
+/yarn.lock
