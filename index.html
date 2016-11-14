@@ -62,22 +62,23 @@
 
     <div class="get-started">
       <div class="get-started__container">
-        <span class="get-started__ripples get-started__ripples--green">
-          <span class="get-started__ripple get-started__ripple--one"></span>
-          <span class="get-started__ripple-background get-started__ripple-background--one"></span>
-          <span class="get-started__ripple get-started__ripple--two"></span>
-          <span class="get-started__ripple-background get-started__ripple-background--two"></span>
-          <span class="get-started__ripple get-started__ripple--three"></span>
-          <span class="get-started__ripple-background get-started__ripple-background--three"></span>
-          <span class="get-started__ripple get-started__ripple--four"></span>
-          <span class="get-started__ripple-background get-started__ripple-background--four"></span>
-          <span class="get-started__ripple get-started__ripple--five"></span>
-          <span class="get-started__ripple-background get-started__ripple-background--five"></span>
-        </span>
-
-        <a href="/get-started" class="button button--large">
-          Get started
-        </a>
+        <div class="get-started__button">
+          <a href="/get-started" class="button button--large">
+            Get started
+          </a>
+          <span class="get-started__ripples get-started__ripples--green">
+            <span class="get-started__ripple get-started__ripple--one"></span>
+            <span class="get-started__ripple-background get-started__ripple-background--one"></span>
+            <span class="get-started__ripple get-started__ripple--two"></span>
+            <span class="get-started__ripple-background get-started__ripple-background--two"></span>
+            <span class="get-started__ripple get-started__ripple--three"></span>
+            <span class="get-started__ripple-background get-started__ripple-background--three"></span>
+            <span class="get-started__ripple get-started__ripple--four"></span>
+            <span class="get-started__ripple-background get-started__ripple-background--four"></span>
+            <span class="get-started__ripple get-started__ripple--five"></span>
+            <span class="get-started__ripple-background get-started__ripple-background--five"></span>
+          </span>
+        </div>
       </div>
     </div>
 
@@ -271,61 +272,6 @@
           getStartedFixed = false;
           getStarted.classList.remove('get-started--fixed');
         }
-      });
-
-      var startRippling = false;
-      var endRippling = false;
-
-      var getStartedButton = document.querySelector('.get-started .button');
-      var ripples = document.querySelectorAll('.get-started__ripple');
-
-      var startTimeout;
-      var endTimeout;
-      getStartedButton.addEventListener('mouseover', function () {
-        if (startRippling) return;
-
-        startRippling = true;
-        endRippling = false;
-
-        ripplesContainer.classList.remove('get-started__ripples--green');
-        ripplesContainer.classList.add('get-started__ripples--blue');
-
-        clearTimeout(endTimeout);
-
-        function ripple(index) {
-          if (index === ripples.length) return;
-
-          ripples[index].style.opacity = (ripples.length - index) / 10 + 0.2;
-          startTimeout = setTimeout(function () {
-            ripple(index + 1);
-          }, index * 20);
-        }
-
-        ripple(0);
-      });
-
-      getStartedButton.addEventListener('mouseout', function () {
-        if (endRippling) {
-          return;
-        }
-
-        endRippling = true;
-        startRippling = false;
-
-        clearTimeout(startTimeout);
-
-        ripplesContainer.classList.add('get-started__ripples--green');
-        ripplesContainer.classList.remove('get-started__ripples--blue');
-
-        function ripple(index) {
-          if (index === 0) return;
-
-          var i = (ripples.length - index + 1);
-          ripples[index - 1].style.opacity = i / 10;
-          setTimeout(ripple.bind(null, index - 1), i * 20);
-        }
-
-        ripple(ripples.length);
       });
     </script>
 
