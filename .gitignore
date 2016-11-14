@@ -23,8 +23,8 @@ $RECYCLE.BIN/
 yarn-error.log
 npm-debug.log
 
-# Cache
-.awcache
+# Build
+lib
 
 # Docs
 gh-pages
