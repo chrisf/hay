@@ -15,6 +15,7 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "build:dev": "nodemon --exec npm run build --watch src",
+    "deploy": "./scripts/deploy.sh",
     "test": "jest"
   },
   "devDependencies": {
