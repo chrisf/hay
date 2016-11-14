@@ -8,6 +8,10 @@
   "bin": {
     "hay": "./bin/hay.js"
   },
+  "repository": {
+    "url": "https://github.com/rynclark/hay.git",
+    "type": "git"
+  },
   "scripts": {
     "build": "babel src --out-dir lib",
     "build:dev": "nodemon --exec npm run build --watch src"
