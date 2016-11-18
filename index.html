@@ -91,41 +91,6 @@
       </div>
     </header>
 
-    <script>
-
-    var test1 = rand(0, 45);
-    var test2 = rand(0, 45);
-
-    var hue1 = getRandomHue(0, 90);
-    var hue2 = getRandomHue(0, 180);
-
-    var random = rand(90, 120);
-
-      function getRandomHue() {
-      	console.log(rand(random, random + 90));
-        return {
-          hue: rand(random, random + 90),
-          saturation: 65,
-          lightness: rand(10, 30),
-          alpha: rand(20, 50)/100
-        };
-      }
-
-      console.log('hsla('+hue1.hue+', '+hue1.saturation+'%, '+hue1.lightness+'%, '+hue1.alpha+')');
-    var stepOne = 'hsla('+hue1.hue+', '+hue1.saturation+'%, '+hue1.lightness+'%, '+hue1.alpha+')';
-    var stepTwo = 'hsla('+hue2.hue+', '+hue2.saturation+'%, '+hue2.lightness+'%, '+hue2.alpha+')';
-
-    console.log(`linear-gradient(to top left, ${test1} ${test2}${stepOne}, ${stepTwo})`);
-
-    document.querySelector('.first').style.background = `linear-gradient(to top left, ${stepOne}, ${stepTwo})`;
-    document.querySelector('.second').style.background= `linear-gradient(to bottom right, ${stepOne}, ${stepTwo})`;
-    </script>
-    <div class="first"></div>
-
-    <div class="second">
-
-    </div>
-
     <section class="about">
       <div class="container">
         <ul class="about__list">
@@ -278,3 +243,41 @@
 
   </body>
 </html>
+
+
+<script>
+
+  function rand(min, max) {
+    return Math.floor(Math.random().toFixed(0) + ' ' * (max - min + 1)) + min;
+  }
+
+
+  var test1 = rand(0, 45);
+  var test2 = rand(0, 45);
+
+  var hue1 = getRandomHue(0, 90);
+  var hue2 = getRandomHue(0, 180);
+
+  var random = rand(90, 120);
+
+  function getRandomHue() {
+    return {
+      hue: rand(random, random + 20),
+      saturation: 65,
+      lightness: rand(10, 30),
+      alpha: rand(20, 50)/100
+    };
+  }
+  console.log('hsla('+hue1.hue+', '+hue1.saturation+'%, '+hue1.lightness+'%, '+hue1.alpha+')');
+
+  console.log(`linear-gradient(to top left, hsla(0, 0%, 0%, 0)`);
+
+  var stepOne = 'hsla('+hue1.hue+', '+hue1.saturation+'%, '+hue1.lightness+'%, '+hue1.alpha+')';
+  var stepTwo = 'hsla('+hue2.hue+', '+hue2.saturation+'%, '+hue2.lightness+'%, '+hue2.alpha+')';
+
+  document.querySelector('.first').style.background = `linear-gradient(to top left, ${stepOne}, ${stepTwo})`;
+  document.querySelector('.second').style.background= `linear-gradient(to bottom right, ${stepOne}, ${stepTwo})`;
+</script>
+<div class="first"></div>
+<div class="second"></div>
+

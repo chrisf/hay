@@ -145,12 +145,14 @@ ParticleNetwork.prototype.update = function () {
   requestAnimationFrame(this.update.bind(this));
 };
 
+random = rand(270, 330);//
 function hsla() {
   return {
     hue: rand(random, random + 90),
     saturation: 65,
-    lightness: rand(10, 30),
-    alpha: rand(20, 50)/100
+    lightness: rand(40, 80),
+
+    alpha: rand(70, 80)/100
   };
 }
 
