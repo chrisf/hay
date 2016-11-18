@@ -66,7 +66,7 @@ function setupCanvas(container) {
   Particle.prototype.draw = function () {
     // Draw particle
     this.ctx.beginPath();
-    this.ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+    this.ctx.fillStyle = '#fff';
     this.ctx.arc(this.x, this.y, 2, 0, 2 * Math.PI);
     this.ctx.fill();
   };
@@ -110,7 +110,7 @@ function setupCanvas(container) {
   ParticleNetwork.prototype.update = function () {
     this.ctx.globalAlpha = 1;
     this.ctx.globalCompositeOperation = 'destination-out';
-    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
     this.ctx.fillRect(0, 0, cw, ch);
     this.ctx.globalCompositeOperation = 'source-over';
 
@@ -137,7 +137,7 @@ function setupCanvas(container) {
         }
         this.ctx.lineWidth = width;
         this.ctx.beginPath();
-        this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        this.ctx.strokeStyle = '#fff';
         this.ctx.moveTo(this.particles[i].x - 1, this.particles[i].y + 1);
         this.ctx.lineTo(this.particles[j].x + 1, this.particles[j].y - 1);
         this.ctx.stroke();
