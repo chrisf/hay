@@ -210,7 +210,7 @@ body {
   z-index: 100;
   left: 0;
   right: 0;
-  background-image: linear-gradient(to bottom right, #351159, #B8495A, #F8A24D);
+  /*background-image: linear-gradient(to bottom right, #351159, #B8495A, #F8A24D);*/
 }
 
 .landing__container {
