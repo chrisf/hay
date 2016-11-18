@@ -20,7 +20,7 @@
                 Docs
               </a>
             </li>
-            <li class="navigation__item">
+            <li class="navigation__item"\>
               <a target="_blank" href="https://github.com/rynclark/hay" class="navigation__link">
                 GitHub
               </a>
@@ -29,9 +29,11 @@
         </nav>
       </div>
     </header>
-
+<div class="first"></div><div class="second"></div>
+    <img class="i-am-blind" src="https://images.unsplash.com/photo-1432256851563-20155d0b7a39?dpr=2&amp;auto=format&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb&amp;crop=" style="/* width:0; *//* height:0; */position:absolute;bottom: -280px;width: auto;z-index: -49;" data-reactid=".17npa5czn5s.0.0.2" class="">
     <section class="intro">
       <div class="intro__background">
+        <canvas></canvas>
         <a href="/" class="logo logo--big"></a>
         <h3>simple static website builder</h3>
       </div>
@@ -88,6 +90,41 @@
         <a href="/" class="logo"></a>
       </div>
     </header>
+
+    <script>
+
+    var test1 = rand(0, 45);
+    var test2 = rand(0, 45);
+
+    var hue1 = getRandomHue(0, 90);
+    var hue2 = getRandomHue(0, 180);
+
+    var random = rand(90, 120);
+
+      function getRandomHue() {
+      	console.log(rand(random, random + 90));
+        return {
+          hue: rand(random, random + 90),
+          saturation: 65,
+          lightness: rand(10, 30),
+          alpha: rand(20, 50)/100
+        };
+      }
+
+      console.log('hsla('+hue1.hue+', '+hue1.saturation+'%, '+hue1.lightness+'%, '+hue1.alpha+')');
+    var stepOne = 'hsla('+hue1.hue+', '+hue1.saturation+'%, '+hue1.lightness+'%, '+hue1.alpha+')';
+    var stepTwo = 'hsla('+hue2.hue+', '+hue2.saturation+'%, '+hue2.lightness+'%, '+hue2.alpha+')';
+
+    console.log(`linear-gradient(to top left, ${test1} ${test2}${stepOne}, ${stepTwo})`);
+
+    document.querySelector('.first').style.background = `linear-gradient(to top left, ${stepOne}, ${stepTwo})`;
+    document.querySelector('.second').style.background= `linear-gradient(to bottom right, ${stepOne}, ${stepTwo})`;
+    </script>
+    <div class="first"></div>
+
+    <div class="second">
+
+    </div>
 
     <section class="about">
       <div class="container">
@@ -227,57 +264,8 @@
     </footer>
 
     <script src="js/rafscroll.js"></script>
-    <script>
-      var consoleElement = document.querySelector('.console');
-      var rightHeader = document.querySelector('.header--right');
-      var leftHeader = document.querySelector('.header--left');
-      var getStarted = document.querySelector('.get-started');
-      var logo = leftHeader.querySelector('.logo');
-      var ripplesContainer = document.querySelector('.get-started__ripples');
-      var introHeight = document.querySelector('.intro').clientHeight;
-      var introBgHeight = document.querySelector('.intro__background').clientHeight;
 
-      var inactive = true;
-      var getStartedFixed = false;
-      var timeout;
-      var isScrolling = false;
-
-      window.addEventListener('scroll', function () {
-        isScrolling = true;
-
-        clearTimeout(timeout);
-        timeout = setTimeout(function () {
-          isScrolling = false;
-        }, 200);
-      });
-
-      new rafscroll(function () {
-        if (!isScrolling) return;
-
-        logo.style.opacity = window.scrollY / introBgHeight;
-        ripplesContainer.style.opacity = 1 - (window.scrollY / (introBgHeight + 200));
-        consoleElement.style.opacity = 1 - (window.scrollY / (introHeight + 100));
-
-        if (window.scrollY >= introBgHeight && inactive) {
-          inactive = false;
-          leftHeader.classList.remove('header--not-fixed');
-          rightHeader.classList.add('header--has-background');
-        } else if (window.scrollY < 400 && !inactive) {
-          inactive = true;
-          leftHeader.classList.add('header--not-fixed');
-          rightHeader.classList.remove('header--has-background');
-        }
-
-        if (window.scrollY >= introHeight + 30 && !getStartedFixed) {
-          getStartedFixed = true;
-          getStarted.classList.add('get-started--fixed');
-        } else if (window.scrollY < introHeight + 30 && getStartedFixed) {
-          getStartedFixed = false;
-          getStarted.classList.remove('get-started--fixed');
-        }
-      });
-    </script>
-
+    <script src="js/header.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -287,5 +275,6 @@
       ga('create', 'UA-87373116-1', 'auto');
       ga('send', 'pageview');
     </script>
+
   </body>
 </html>
