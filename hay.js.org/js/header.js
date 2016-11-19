@@ -1,4 +1,4 @@
-var header = document.querySelector('.landing__left-background');
+var header = document.querySelector('.landing');
 
 var pixelRatio = window.devicePixelRatio || 1;
 
@@ -6,7 +6,12 @@ function rand( min, max ) {
   return Math.random() * ( max - min ) + min;
 }
 
-function setupCanvas(container) {
+function setupCanvas(container, color) {
+  var rgb = {
+    black: '0, 0, 0',
+    white: '255, 255, 255'
+  };
+
   var c = container.querySelector('canvas');
 
   var ctx = c.getContext("2d");
@@ -27,7 +32,6 @@ function setupCanvas(container) {
 
     cw = c.width;
     ch = c.height;
-
     // ctx.fillStyle = '#2D313A';
     // ctx.fillRect(0, 0, cw, ch);
   }
@@ -44,8 +48,8 @@ function setupCanvas(container) {
     this.y = Math.random() * (ch / pixelRatio);
 
     this.velocity = {
-      y: (Math.random() - 0.5) * 0.3,
-      x: (Math.random() - 0.5) * 0.3
+      y: (Math.random() - 0.5) * 0.7,
+      x: (Math.random() - 0.5) * 0.7
     };
   };
 
@@ -66,7 +70,7 @@ function setupCanvas(container) {
   Particle.prototype.draw = function () {
     // Draw particle
     this.ctx.beginPath();
-    this.ctx.fillStyle = '#fff';
+    this.ctx.fillStyle = color;
     this.ctx.arc(this.x, this.y, 2, 0, 2 * Math.PI);
     this.ctx.fill();
   };
@@ -86,33 +90,16 @@ function setupCanvas(container) {
     this.ctx = this.canvas.getContext('2d');
     // Initialise particles
     this.particles = [];
-    var density = Math.floor(cw / 8);
+    var density = Math.floor(ch / 4);
 
     for (var i = 0; i < density; i++) {
       this.particles.push(new Particle(this));
     }
-
-    var timeout;
-    window.addEventListener('resize', function () {
-      clearTimeout(timeout);
-      timeout = setTimeout(function () {
-        this.particles = [];
-        var density = Math.floor(window.innerWidth / 8);
-
-        for (var i = 0; i < density; i++) {
-          this.particles.push(new Particle(this));
-        }
-      }.bind(this), 500);
-    }.bind(this));
-    // Update canvas
     requestAnimationFrame(this.update.bind(this));
   };
   ParticleNetwork.prototype.update = function () {
     this.ctx.globalAlpha = 1;
-    this.ctx.globalCompositeOperation = 'destination-out';
-    this.ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-    this.ctx.fillRect(0, 0, cw, ch);
-    this.ctx.globalCompositeOperation = 'source-over';
+    this.ctx.clearRect(0, 0, cw, ch);
 
     // Draw particles
     for (var i = 0; i < this.particles.length; i++) {
@@ -137,7 +124,7 @@ function setupCanvas(container) {
         }
         this.ctx.lineWidth = width;
         this.ctx.beginPath();
-        this.ctx.strokeStyle = '#fff';
+        this.ctx.strokeStyle = color;
         this.ctx.moveTo(this.particles[i].x - 1, this.particles[i].y + 1);
         this.ctx.lineTo(this.particles[j].x + 1, this.particles[j].y - 1);
         this.ctx.stroke();
@@ -151,14 +138,3 @@ function setupCanvas(container) {
   new ParticleNetwork(c);
 }
 
-setupCanvas(header);
-random = rand(0, 360);//
-function hsla() {
-  return {
-    hue: rand(random, random + 90),
-    saturation: 65,
-    lightness: rand(40, 80),
-
-    alpha: 1
-  };
-}
