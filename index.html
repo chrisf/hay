@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <header class="header header--main header--right">
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a href="/docs" class="navigation__link">
-              Docs
-            </a>
-          </li>
-          <li class="navigation__item"\>
-            <a target="_blank" href="https://github.com/rynclark/hay" class="navigation__link">
-              GitHub
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
     <section class="landing">
-      <div class="landing__arrow">
-        <span class="typcn typcn-chevron-right"></span>
-      </div>
       <div class="landing__background">
       </div>
-      <div class="landing__left-background">
+      <div class="landing__network">
         <canvas></canvas>
       </div>
 
@@ -42,151 +22,83 @@
         <header class="landing__header">
           <div class="landing__logo-container">
             <a href="/" class="logo logo--big">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 926 362.5" style="enable-background:new 0 0 926 362.5;" xml:space="preserve">
-                <g id="Layer_1_copy_2">
-                  <g>
-                    <g>
-                      <path class="left-bottom" d="M177,360.4c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                        c3.1-2.6,6.1-5.3,9.2-7.9l106.9-79.8l7.5,7.3l-89.4,105.4C186.2,354.3,182.1,357.6,177,360.4z"/>
-                    </g>
-                    <g>
-                      <path class="left-middle" d="M177,284.5c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                        c3.1-2.6,6.1-5.3,9.2-7.9L271.2,162l7.5,7.3l-89.4,105.4C186.2,278.4,182.1,281.7,177,284.5z"/>
-                    </g>
-                    <g>
-                      <path class="left-top" d="M177,208.6c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                        c3.1-2.6,6.1-5.3,9.2-7.9l106.9-79.8l7.5,7.3l-89.4,105.4C186.2,202.6,182.1,205.8,177,208.6z"/>
-                    </g>
-                    <g>
-                      <path class="top" d="M154.4,122.4c-1.2,4.5-4.4,7.9-9.7,10.2c-3.2,1.4-6.9,1.8-11.1,1.1c-4.2-0.6-7.4-3.4-9.5-8.1
-                        c-1.4-3.2-2-6.4-1.9-9.6c0.1-3.2,0.3-6.5,0.4-9.7l12.3-106l8.4-0.4l12.2,109.9C155.9,113.8,155.5,118,154.4,122.4z"/>
-                    </g>
-                    <g>
-                      <path class="right-bottom" d="M89.4,350.6L0,245.2l7.5-7.3l106.9,79.8c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                        c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,357.6,92.5,354.3,89.4,350.6z"/>
-                    </g>
-                    <g>
-                      <path class="right-middle" d="M89.4,274.7L0,169.3l7.5-7.3l106.9,79.8c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                        c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,281.7,92.5,278.4,89.4,274.7z"/>
-                    </g>
-                    <g>
-                      <path class="right-top" d="M89.4,198.8L0,93.4l7.5-7.3L114.4,166c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                        c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,205.8,92.5,202.6,89.4,198.8z"/>
-                    </g>
-                  </g>
-                </g>
-                <g id="Layer_2">
-                  <g>
-                    <path class="st1" d="M489.2,65.8c0-3.8,2.3-6.1,6.1-6.1h39.5c4.6,0,6.5,2.3,6.5,6.1v256.2c0,3.8-1.9,6.1-6.5,6.1h-39.5
-                      c-3.8,0-6.1-2.3-6.1-6.1v-102h-49.1v102c0,3.8-2.3,6.1-6.1,6.1h-39.5c-4.6,0-6.5-2.3-6.5-6.1V65.8c0-3.8,1.9-6.1,6.5-6.1H434
-                      c3.8,0,6.1,2.3,6.1,6.1v103.5h49.1V65.8z"/>
-                    <path class="st1" d="M715.8,328.1c-3.5,0-5.4-1.9-6.1-5.4l-12.3-48.3h-72.1l-11.9,48.3c-0.8,3.5-2.7,5.4-6.1,5.4h-37.6
-                      c-4.2,0-6.1-2.3-5-6.5L628.4,65c0.8-3.8,3.1-5.4,6.5-5.4h53.3c3.5,0,5.8,1.5,6.5,5.4l63.7,256.6c1.2,4.2-0.8,6.5-5.4,6.5H715.8z
-                       M661.4,125.6l-24.2,104.3h48.3L661.4,125.6z"/>
-                    <path class="st1" d="M919.1,59.6c5.8,0,8.4,3.8,6.1,8.8L855,227.6v92.8c0,5-2.7,7.7-7.7,7.7h-36.8c-5,0-7.7-2.7-7.7-7.7v-92.8
-                      L732.7,68.5c-2.3-5,0.4-8.8,6.1-8.8h38.3c4.6,0,7.3,2.3,8.8,6.1l43,98.6l43-98.6c1.5-3.8,4.2-6.1,8.8-6.1H919.1z"/>
-                  </g>
-                </g>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 926 362.5"><path d="M177 360.4c-5.1 2.8-11 2.8-17.6 0-4-1.7-7.5-4.7-10.6-9.1-3.1-4.4-3.3-9.6-.8-15.6 1.7-4 4-7.3 7.1-10 3.1-2.6 6.1-5.3 9.2-7.9L271.2 238l7.5 7.3-89.4 105.4c-3.1 3.6-7.2 6.9-12.3 9.7z" class="left-bottom"/><path d="M177 284.5c-5.1 2.8-11 2.8-17.6 0-4-1.7-7.5-4.7-10.6-9.1-3.1-4.4-3.3-9.6-.8-15.6 1.7-4 4-7.3 7.1-10 3.1-2.6 6.1-5.3 9.2-7.9L271.2 162l7.5 7.3-89.4 105.4c-3.1 3.7-7.2 7-12.3 9.8z" class="left-middle"/><path d="M177 208.6c-5.1 2.8-11 2.8-17.6 0-4-1.7-7.5-4.7-10.6-9.1-3.1-4.4-3.3-9.6-.8-15.6 1.7-4 4-7.3 7.1-10 3.1-2.6 6.1-5.3 9.2-7.9l106.9-79.8 7.5 7.3-89.4 105.4c-3.1 3.7-7.2 6.9-12.3 9.7z" class="left-top"/><path d="M154.4 122.4c-1.2 4.5-4.4 7.9-9.7 10.2-3.2 1.4-6.9 1.8-11.1 1.1-4.2-.6-7.4-3.4-9.5-8.1-1.4-3.2-2-6.4-1.9-9.6.1-3.2.3-6.5.4-9.7L134.9.3l8.4-.4 12.2 109.9c.4 4 0 8.2-1.1 12.6z" class="top"/><path d="M89.4 350.6L0 245.2l7.5-7.3 106.9 79.8c3.1 2.6 6.1 5.3 9.2 7.9 3.1 2.6 5.4 6 7.1 10 2.5 6 2.2 11.2-.8 15.6s-6.6 7.5-10.6 9.1c-6.7 2.8-12.5 2.8-17.6 0-5.1-2.7-9.2-6-12.3-9.7z" class="right-bottom"/><path d="M89.4 274.7L0 169.3l7.5-7.3 106.9 79.8c3.1 2.6 6.1 5.3 9.2 7.9 3.1 2.6 5.4 6 7.1 10 2.5 6 2.2 11.2-.8 15.6s-6.6 7.5-10.6 9.1c-6.7 2.8-12.5 2.8-17.6 0-5.1-2.7-9.2-6-12.3-9.7z" class="right-middle"/><path d="M89.4 198.8L0 93.4l7.5-7.3L114.4 166c3.1 2.6 6.1 5.3 9.2 7.9 3.1 2.6 5.4 6 7.1 10 2.5 6 2.2 11.2-.8 15.6s-6.6 7.5-10.6 9.1c-6.7 2.8-12.5 2.8-17.6 0-5.1-2.8-9.2-6-12.3-9.8z" class="right-top"/><path d="M489.2 65.8c0-3.8 2.3-6.1 6.1-6.1h39.5c4.6 0 6.5 2.3 6.5 6.1V322c0 3.8-1.9 6.1-6.5 6.1h-39.5c-3.8 0-6.1-2.3-6.1-6.1V220h-49.1v102c0 3.8-2.3 6.1-6.1 6.1h-39.5c-4.6 0-6.5-2.3-6.5-6.1V65.8c0-3.8 1.9-6.1 6.5-6.1H434c3.8 0 6.1 2.3 6.1 6.1v103.5h49.1V65.8zm226.6 262.3c-3.5 0-5.4-1.9-6.1-5.4l-12.3-48.3h-72.1l-11.9 48.3c-.8 3.5-2.7 5.4-6.1 5.4h-37.6c-4.2 0-6.1-2.3-5-6.5L628.4 65c.8-3.8 3.1-5.4 6.5-5.4h53.3c3.5 0 5.8 1.5 6.5 5.4l63.7 256.6c1.2 4.2-.8 6.5-5.4 6.5h-37.2zm-54.4-202.5l-24.2 104.3h48.3l-24.1-104.3zm257.7-66c5.8 0 8.4 3.8 6.1 8.8L855 227.6v92.8c0 5-2.7 7.7-7.7 7.7h-36.8c-5 0-7.7-2.7-7.7-7.7v-92.8L732.7 68.5c-2.3-5 .4-8.8 6.1-8.8h38.3c4.6 0 7.3 2.3 8.8 6.1l43 98.6 43-98.6c1.5-3.8 4.2-6.1 8.8-6.1h38.4z" class="st1"/></svg>
             </a>
           </div>
           <h3>simple static website builder</h3>
         </header>
-        <div class="console">
-          <header class="console__header">
-            hay
-          </header>
-          <table style="border-spacing: 0">
-            <tbody>
-            <tr>
-              <td class="gutter" style="text-align: center">
-                <pre><span class="dollar">$</span></pre>
-                <pre><span class="dollar">$</span></pre>
-                <pre><span class="dollar">$</span></pre>
-                <pre><span class="dollar">$</span></pre>
-              </td>
-              <td class="code">
-                <pre><span class="pink">yarn</span> global add <span class="green">hay</span><span class="dark-blue" style="user-select: none"> # or npm install -g hay</span></pre>
-                <pre><span class="pink">hay</span> new my-website</pre>
-                <pre><span class="pink">cd</span> my-website</pre>
-                <pre><span class="pink bold">hay</span> bale<span style="user-select: none" class="dark-blue"> # or serve with hay serve</span></pre>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+        <div>
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="/docs" class="navigation__link">
+                  Docs
+                </a>
+              </li>
+              <li class="navigation__item"\>
+                <a target="_blank" href="https://github.com/rynclark/hay" class="navigation__link">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="console">
+            <header class="console__header">
+              <span class="console__header__buttons">
+                <span class="console__header__button console__header__button--red"></span>
+                <span class="console__header__button console__header__button--yellow"></span>
+                <span class="console__header__button console__header__button--green"></span>
+              </span>
+              hay
+            </header>
+            <table style="border-spacing: 0">
+              <tbody>
+              <tr>
+                <td class="gutter" style="text-align: center">
+                  <pre><span class="dollar">$</span></pre>
+                  <pre><span class="dollar">$</span></pre>
+                  <pre><span class="dollar">$</span></pre>
+                  <pre><span class="dollar">$</span></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="comment">yarn</span> global add <span class="green">hay</span><span class="dark-blue" style="user-select: none"> # or npm install -g hay</span></pre>
+                  <pre><span class="comment">hay</span> new my-website</pre>
+                  <pre><span class="comment">cd</span> my-website</pre>
+                  <pre><span class="green bold">hay</span> bale<span style="user-select: none" class="dark-blue"> # or serve with hay serve</span></pre>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="get-started">
-          <div class="get-started__container">
-            <div class="get-started__button">
-              <a href="/get-started" class="button button--large">
-                Get started
-              </a>
-              <span class="get-started__ripples get-started__ripples--green">
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about__line about__line--white"></div>
+      <div class="about__line about__line--normal"></div>
+      <div class="about__line about__line--red"></div>
+      <div class="about__line about__line--orange"></div>
+      <div class="about__line about__line--yellow"></div>
+      <div class="about__line about__line--green"></div>
+      <div class="about__line about__line--blue"></div>
+      <div class="about__line about__line--purple"></div>
+      <div class="get-started">
+        <div class="get-started__container">
+          <div class="get-started__button">
+            <a href="/get-started" class="button button--large">
+              Get started
+            </a>
+            <span class="get-started__ripples get-started__ripples--black">
               <span class="get-started__ripple get-started__ripple--one"></span>
               <span class="get-started__ripple get-started__ripple--two"></span>
               <span class="get-started__ripple get-started__ripple--three"></span>
               <span class="get-started__ripple get-started__ripple--four"></span>
               <span class="get-started__ripple get-started__ripple--five"></span>
             </span>
-            </div>
           </div>
         </div>
-      </section>
-    </section>
-    <!--<img src="" class="background">-->
-
-    <header class="header header--left header--has-background">
-      <a href="/" class="logo">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 926 362.5" style="enable-background:new 0 0 926 362.5;" xml:space="preserve">
-          <g id="Layer_1_copy_2">
-            <g>
-              <g>
-                <path class="left-bottom" d="M177,360.4c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                  c3.1-2.6,6.1-5.3,9.2-7.9l106.9-79.8l7.5,7.3l-89.4,105.4C186.2,354.3,182.1,357.6,177,360.4z"/>
-              </g>
-              <g>
-                <path class="left-middle" d="M177,284.5c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                  c3.1-2.6,6.1-5.3,9.2-7.9L271.2,162l7.5,7.3l-89.4,105.4C186.2,278.4,182.1,281.7,177,284.5z"/>
-              </g>
-              <g>
-                <path class="left-top" d="M177,208.6c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                  c3.1-2.6,6.1-5.3,9.2-7.9l106.9-79.8l7.5,7.3l-89.4,105.4C186.2,202.6,182.1,205.8,177,208.6z"/>
-              </g>
-              <g>
-                <path class="top" d="M154.4,122.4c-1.2,4.5-4.4,7.9-9.7,10.2c-3.2,1.4-6.9,1.8-11.1,1.1c-4.2-0.6-7.4-3.4-9.5-8.1
-                  c-1.4-3.2-2-6.4-1.9-9.6c0.1-3.2,0.3-6.5,0.4-9.7l12.3-106l8.4-0.4l12.2,109.9C155.9,113.8,155.5,118,154.4,122.4z"/>
-              </g>
-              <g>
-                <path class="right-bottom" d="M89.4,350.6L0,245.2l7.5-7.3l106.9,79.8c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                  c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,357.6,92.5,354.3,89.4,350.6z"/>
-              </g>
-              <g>
-                <path class="right-middle" d="M89.4,274.7L0,169.3l7.5-7.3l106.9,79.8c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                  c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,281.7,92.5,278.4,89.4,274.7z"/>
-              </g>
-              <g>
-                <path class="right-top" d="M89.4,198.8L0,93.4l7.5-7.3L114.4,166c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                  c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,205.8,92.5,202.6,89.4,198.8z"/>
-              </g>
-            </g>
-          </g>
-          <g id="Layer_2">
-            <g>
-              <path class="st1" d="M489.2,65.8c0-3.8,2.3-6.1,6.1-6.1h39.5c4.6,0,6.5,2.3,6.5,6.1v256.2c0,3.8-1.9,6.1-6.5,6.1h-39.5
-                c-3.8,0-6.1-2.3-6.1-6.1v-102h-49.1v102c0,3.8-2.3,6.1-6.1,6.1h-39.5c-4.6,0-6.5-2.3-6.5-6.1V65.8c0-3.8,1.9-6.1,6.5-6.1H434
-                c3.8,0,6.1,2.3,6.1,6.1v103.5h49.1V65.8z"/>
-              <path class="st1" d="M715.8,328.1c-3.5,0-5.4-1.9-6.1-5.4l-12.3-48.3h-72.1l-11.9,48.3c-0.8,3.5-2.7,5.4-6.1,5.4h-37.6
-                c-4.2,0-6.1-2.3-5-6.5L628.4,65c0.8-3.8,3.1-5.4,6.5-5.4h53.3c3.5,0,5.8,1.5,6.5,5.4l63.7,256.6c1.2,4.2-0.8,6.5-5.4,6.5H715.8z
-                 M661.4,125.6l-24.2,104.3h48.3L661.4,125.6z"/>
-              <path class="st1" d="M919.1,59.6c5.8,0,8.4,3.8,6.1,8.8L855,227.6v92.8c0,5-2.7,7.7-7.7,7.7h-36.8c-5,0-7.7-2.7-7.7-7.7v-92.8
-                L732.7,68.5c-2.3-5,0.4-8.8,6.1-8.8h38.3c4.6,0,7.3,2.3,8.8,6.1l43,98.6l43-98.6c1.5-3.8,4.2-6.1,8.8-6.1H919.1z"/>
-            </g>
-          </g>
-        </svg>
-      </a>
-    </header>
-
-    <section class="about">
+      </div>
       <ul class="about__list">
         <li class="about__item">
           <div class="about__icon">
@@ -198,16 +110,22 @@
           <p>
             hay builds your website in a flash - converting your website into static assets ready for deployment anywhere
           </p>
+
+          <p>
+            already using jekyll with GitHub pages? hay will work with your setup straight out of the box
+          </p>
         </li>
         <li class="about__item">
           <div class="about__icon">
             <span class="typcn typcn-device-laptop" style="color: #f86ae9;"></span>
           </div>
-          <h4>write whatever</h4>
+          <h4>pluggable</h4>
 
           <p>
-            don't fancy using the inbuilt markdown support to write your pages or blog posts? simply swap it out and write in the format that you want
+            if you don't want to use markdown to format your pages, you don't have to!
           </p>
+
+          <p>hay let's you write your pages in markdown or React.js components out of the box - if that isn't enough, plugins let you take it wherever you'd like</p>
         </li>
         <li class="about__item">
           <div class="about__icon">
@@ -217,11 +135,15 @@
           <h4>extra as standard</h4>
 
           <p>
-            hay can paginate your blog posts, deploy to GitHub pages, and even butter your toast<sup>*</sup> at your request
+            hay can paginate your blog posts, deploy to GitHub pages and even butter your toast<sup>*</sup> at your request
+          </p>
+
+          <p>
+            you can speed up your development workflow by using the inbuilt dev server, which can seamlessly integrated
           </p>
 
           <p class="about__clarification">
-            * sorry this was a lie
+            * sorry this is a lie
           </p>
         </li>
       </ul>
@@ -232,6 +154,12 @@
         <div class="feature__main">
           <div class="console">
             <header class="console__header">
+              <span class="console__header__buttons">
+                <span class="console__header__button console__header__button--red"></span>
+                <span class="console__header__button console__header__button--yellow"></span>
+                <span class="console__header__button console__header__button--green"></span>
+              </span>
+
               hay
             </header>
             <div class="file-name">
@@ -258,10 +186,10 @@
                 </td>
                 <td class="code">
                   <pre>{</pre>
-                  <pre> <span class="pink">"name"</span>: <span class="orange">"hay"</span>,</pre>
-                  <pre> <span class="pink">"description"</span>: <span class="orange">"simple static website..."</span>,</pre>
-                  <pre> <span class="pink">"url"</span>: <span class="orange">"https://hay.js.org"</span>,</pre>
-                  <pre> <span class="pink">"paginate"</span>: <span class="orange">"true"</span></pre>
+                  <pre>  <span class="green">"name"</span>: <span class="orange">"hay"</span>,</pre>
+                  <pre>  <span class="green">"description"</span>: <span class="orange">"simple static website builder"</span>,</pre>
+                  <pre>  <span class="green">"url"</span>: <span class="orange">"https://hay.js.org"</span>,</pre>
+                  <pre>  <span class="green">"paginate"</span>: <span class="orange">"true"</span></pre>
                   <pre>}</pre>
                 </td>
               </tr>
@@ -298,6 +226,12 @@
         <div class="feature__main">
           <div class="console">
             <header class="console__header">
+              <span class="console__header__buttons">
+                <span class="console__header__button console__header__button--red"></span>
+                <span class="console__header__button console__header__button--yellow"></span>
+                <span class="console__header__button console__header__button--green"></span>
+              </span>
+
               hay
             </header>
             <table style="border-spacing: 0">
@@ -307,7 +241,7 @@
                   <pre><span class="dollar">$</span></pre>
                 </td>
                 <td class="code">
-                  <pre><span class="pink bold">hay</span> serve</pre>
+                  <pre><span class="green bold">hay</span> serve</pre>
                   <pre><span class="bold">hay serve v0.1.0</span></pre>
                   <pre>&nbsp;</pre>
                   <pre><span class="white">   hay config</span></pre>
@@ -360,6 +294,12 @@
         <div class="feature__main">
           <div class="console">
             <header class="console__header">
+              <span class="console__header__buttons">
+                <span class="console__header__button console__header__button--red"></span>
+                <span class="console__header__button console__header__button--yellow"></span>
+                <span class="console__header__button console__header__button--green"></span>
+              </span>
+
               hay
             </header>
             <div class="file-name">
@@ -428,41 +368,7 @@
           </div>
           <div class="footer__logo">
             <a href="/" class="logo-only">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 viewBox="0 0 278.7 362.5" style="enable-background:new 0 0 278.7 362.5;" xml:space="preserve">
-                <g id="Layer_1_copy_2">
-                  <g>
-                    <g>
-                      <path class="left-bottom" d="M177,360.4c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                        c3.1-2.6,6.1-5.3,9.2-7.9l106.9-79.8l7.5,7.3l-89.4,105.4C186.2,354.3,182.1,357.6,177,360.4z"/>
-                    </g>
-                    <g>
-                      <path class="left-middle" d="M177,284.5c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                        c3.1-2.6,6.1-5.3,9.2-7.9L271.2,162l7.5,7.3l-89.4,105.4C186.2,278.4,182.1,281.7,177,284.5z"/>
-                    </g>
-                    <g>
-                      <path class="left-top" d="M177,208.6c-5.1,2.8-11,2.8-17.6,0c-4-1.7-7.5-4.7-10.6-9.1c-3.1-4.4-3.3-9.6-0.8-15.6c1.7-4,4-7.3,7.1-10
-                        c3.1-2.6,6.1-5.3,9.2-7.9l106.9-79.8l7.5,7.3l-89.4,105.4C186.2,202.6,182.1,205.8,177,208.6z"/>
-                    </g>
-                    <g>
-                      <path class="top" d="M154.4,122.4c-1.2,4.5-4.4,7.9-9.7,10.2c-3.2,1.4-6.9,1.8-11.1,1.1c-4.2-0.6-7.4-3.4-9.5-8.1
-                        c-1.4-3.2-2-6.4-1.9-9.6c0.1-3.2,0.3-6.5,0.4-9.7l12.3-106l8.4-0.4l12.2,109.9C155.9,113.8,155.5,118,154.4,122.4z"/>
-                    </g>
-                    <g>
-                      <path class="right-bottom" d="M89.4,350.6L0,245.2l7.5-7.3l106.9,79.8c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                        c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,357.6,92.5,354.3,89.4,350.6z"/>
-                    </g>
-                    <g>
-                      <path class="right-middle" d="M89.4,274.7L0,169.3l7.5-7.3l106.9,79.8c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                        c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,281.7,92.5,278.4,89.4,274.7z"/>
-                    </g>
-                    <g>
-                      <path class="right-top" d="M89.4,198.8L0,93.4l7.5-7.3L114.4,166c3.1,2.6,6.1,5.3,9.2,7.9c3.1,2.6,5.4,6,7.1,10
-                        c2.5,6,2.2,11.2-0.8,15.6c-3,4.4-6.6,7.5-10.6,9.1c-6.7,2.8-12.5,2.8-17.6,0C96.6,205.8,92.5,202.6,89.4,198.8z"/>
-                    </g>
-                  </g>
-                </g>
-                </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278.7 362.5"><path d="M177 360.4c-5.1 2.8-11 2.8-17.6 0-4-1.7-7.5-4.7-10.6-9.1-3.1-4.4-3.3-9.6-.8-15.6 1.7-4 4-7.3 7.1-10 3.1-2.6 6.1-5.3 9.2-7.9L271.2 238l7.5 7.3-89.4 105.4c-3.1 3.6-7.2 6.9-12.3 9.7z" class="left-bottom"/><path d="M177 284.5c-5.1 2.8-11 2.8-17.6 0-4-1.7-7.5-4.7-10.6-9.1-3.1-4.4-3.3-9.6-.8-15.6 1.7-4 4-7.3 7.1-10 3.1-2.6 6.1-5.3 9.2-7.9L271.2 162l7.5 7.3-89.4 105.4c-3.1 3.7-7.2 7-12.3 9.8z" class="left-middle"/><path d="M177 208.6c-5.1 2.8-11 2.8-17.6 0-4-1.7-7.5-4.7-10.6-9.1-3.1-4.4-3.3-9.6-.8-15.6 1.7-4 4-7.3 7.1-10 3.1-2.6 6.1-5.3 9.2-7.9l106.9-79.8 7.5 7.3-89.4 105.4c-3.1 3.7-7.2 6.9-12.3 9.7z" class="left-top"/><path d="M154.4 122.4c-1.2 4.5-4.4 7.9-9.7 10.2-3.2 1.4-6.9 1.8-11.1 1.1-4.2-.6-7.4-3.4-9.5-8.1-1.4-3.2-2-6.4-1.9-9.6.1-3.2.3-6.5.4-9.7L134.9.3l8.4-.4 12.2 109.9c.4 4 0 8.2-1.1 12.6z" class="top"/><path d="M89.4 350.6L0 245.2l7.5-7.3 106.9 79.8c3.1 2.6 6.1 5.3 9.2 7.9 3.1 2.6 5.4 6 7.1 10 2.5 6 2.2 11.2-.8 15.6s-6.6 7.5-10.6 9.1c-6.7 2.8-12.5 2.8-17.6 0-5.1-2.7-9.2-6-12.3-9.7z" class="right-bottom"/><path d="M89.4 274.7L0 169.3l7.5-7.3 106.9 79.8c3.1 2.6 6.1 5.3 9.2 7.9 3.1 2.6 5.4 6 7.1 10 2.5 6 2.2 11.2-.8 15.6s-6.6 7.5-10.6 9.1c-6.7 2.8-12.5 2.8-17.6 0-5.1-2.7-9.2-6-12.3-9.7z" class="right-middle"/><path d="M89.4 198.8L0 93.4l7.5-7.3L114.4 166c3.1 2.6 6.1 5.3 9.2 7.9 3.1 2.6 5.4 6 7.1 10 2.5 6 2.2 11.2-.8 15.6s-6.6 7.5-10.6 9.1c-6.7 2.8-12.5 2.8-17.6 0-5.1-2.8-9.2-6-12.3-9.8z" class="right-top"/></svg>
             </a>
           </div>
         </div>
@@ -490,92 +396,9 @@
 
 
 <script>
-  var gradients = [{"name":"Nimvelo","colors":["#314755","#26a0da"]},{"name":"Noon to Dusk","colors":["#ff6e7f","#bfe9ff"]},{"name":"YouTube","colors":["#e52d27","#b31217"]},{"name":"Cool Brown","colors":["#603813","#b29f94"]},{"name":"Harmonic Energy","colors":["#16A085","#F4D03F"]},{"name":"Playing with Reds","colors":["#D31027","#EA384D"]},{"name":"Sunny Days","colors":["#EDE574","#E1F5C4"]},{"name":"Green Beach","colors":["#02AAB0","#00CDAC"]},{"name":"Intuitive Purple","colors":["#DA22FF","#9733EE"]},{"name":"Emerald Water","colors":["#348F50","#56B4D3"]},{"name":"Lemon Twist","colors":["#3CA55C","#B5AC49"]},{"name":"Horizon","colors":["#003973","#E5E5BE"]},{"name":"Rose Water","colors":["#E55D87","#5FC3E4"]},{"name":"Frozen","colors":["#403B4A","#E7E9BB"]},{"name":"Mango Pulp","colors":["#F09819","#EDDE5D"]},{"name":"Bloody Mary","colors":["#FF512F","#DD2476"]},{"name":"Aubergine","colors":["#AA076B","#61045F"]},{"name":"Aqua Marine","colors":["#1A2980","#26D0CE"]},{"name":"Sunrise","colors":["#FF512F","#F09819"]},{"name":"Purple Paradise","colors":["#1D2B64","#F8CDDA"]},{"name":"Sea Weed","colors":["#4CB8C4","#3CD3AD"]},{"name":"Pinky","colors":["#DD5E89","#F7BB97"]},{"name":"Cherry","colors":["#EB3349","#F45C43"]},{"name":"Mojito","colors":["#1D976C","#93F9B9"]},{"name":"Juicy Orange","colors":["#FF8008","#FFC837"]},{"name":"Mirage","colors":["#16222A","#3A6073"]},{"name":"Steel Gray","colors":["#1F1C2C","#928DAB"]},{"name":"Kashmir","colors":["#614385","#516395"]},{"name":"Electric Violet","colors":["#4776E6","#8E54E9"]},{"name":"Venice Blue","colors":["#085078","#85D8CE"]},{"name":"Bora Bora","colors":["#2BC0E4","#EAECC6"]},{"name":"Moss","colors":["#134E5E","#71B280"]},{"name":"Shroom Haze","colors":["#5C258D","#4389A2"]},{"name":"Mystic","colors":["#757F9A","#D7DDE8"]},{"name":"Midnight City","colors":["#232526","#414345"]},{"name":"Sea Blizz","colors":["#1CD8D2","#93EDC7"]},{"name":"Opa","colors":["#3D7EAA","#FFE47A"]},{"name":"Titanium","colors":["#283048","#859398"]},{"name":"Mantle","colors":["#24C6DC","#514A9D"]},{"name":"Dracula","colors":["#DC2424","#4A569D"]},{"name":"Peach","colors":["#ED4264","#FFEDBC"]},{"name":"Moonrise","colors":["#DAE2F8","#D6A4A4"]},{"name":"Clouds","colors":["#ECE9E6","#FFFFFF"]},{"name":"Stellar","colors":["#7474BF","#348AC7"]},{"name":"Bourbon","colors":["#EC6F66","#F3A183"]},{"name":"Calm Darya","colors":["#5f2c82","#49a09d"]},{"name":"Influenza","colors":["#C04848","#480048"]},{"name":"Shrimpy","colors":["#e43a15","#e65245"]},{"name":"Army","colors":["#414d0b","#727a17"]},{"name":"Miaka","colors":["#FC354C","#0ABFBC"]},{"name":"Pinot Noir","colors":["#4b6cb7","#182848"]},{"name":"Day Tripper","colors":["#f857a6","#ff5858"]},{"name":"Namn","colors":["#a73737","#7a2828"]},{"name":"Blurry Beach","colors":["#d53369","#cbad6d"]},{"name":"Vasily","colors":["#e9d362","#333333"]},{"name":"A Lost Memory","colors":["#DE6262","#FFB88C"]},{"name":"Petrichor","colors":["#666600","#999966"]},{"name":"Jonquil","colors":["#FFEEEE","#DDEFBB"]},{"name":"Sirius Tamed","colors":["#EFEFBB","#D4D3DD"]},{"name":"Misty Meadow","colors":["#215f00","#e4e4d9"]},{"name":"Aqualicious","colors":["#50C9C3","#96DEDA"]},{"name":"Moor","colors":["#616161","#9bc5c3"]},{"name":"Almost","colors":["#ddd6f3","#faaca8"]},{"name":"Forever Lost","colors":["#5D4157","#A8CABA"]},{"name":"Winter","colors":["#E6DADA","#274046"]},{"name":"Autumn","colors":["#DAD299","#B0DAB9"]},{"name":"Candy","colors":["#D3959B","#BFE6BA"]},{"name":"Reef","colors":["#00d2ff","#3a7bd5"]},{"name":"The Strain","colors":["#870000","#190A05"]},{"name":"Dirty Fog","colors":["#B993D6","#8CA6DB"]},{"name":"Earthly","colors":["#649173","#DBD5A4"]},{"name":"Virgin","colors":["#C9FFBF","#FFAFBD"]},{"name":"Ash","colors":["#606c88","#3f4c6b"]},{"name":"Shadow Night","colors":["#000000","#53346D"]},{"name":"Cherryblossoms","colors":["#FBD3E9","#BB377D"]},{"name":"Parklife","colors":["#ADD100","#7B920A"]},{"name":"Dance To Forget","colors":["#FF4E50","#F9D423"]},{"name":"Starfall","colors":["#F0C27B","#4B1248"]},{"name":"Red Mist","colors":["#000000","#e74c3c"]},{"name":"Teal Love","colors":["#AAFFA9","#11FFBD"]},{"name":"Neon Life","colors":["#B3FFAB","#12FFF7"]},{"name":"Man of Steel","colors":["#780206","#061161"]},{"name":"Amethyst","colors":["#9D50BB","#6E48AA"]},{"name":"Cheer Up Emo Kid","colors":["#556270","#FF6B6B"]},{"name":"Shore","colors":["#70e1f5","#ffd194"]},{"name":"Facebook Messenger","colors":["#00c6ff","#0072ff"]},{"name":"SoundCloud","colors":["#fe8c00","#f83600"]},{"name":"ServQuick","colors":["#485563","#29323c"]},{"name":"Friday","colors":["#83a4d4","#b6fbff"]},{"name":"Martini","colors":["#FDFC47","#24FE41"]},{"name":"Metallic Toad","colors":["#abbaab","#ffffff"]},{"name":"Between The Clouds","colors":["#73C8A9","#373B44"]},{"name":"Crazy Orange I","colors":["#D38312","#A83279"]},{"name":"Hersheys","colors":["#1e130c","#9a8478"]},{"name":"Talking To Mice Elf","colors":["#948E99","#2E1437"]},{"name":"Purple Bliss","colors":["#360033","#0b8793"]},{"name":"Predawn","colors":["#FFA17F","#00223E"]},{"name":"Endless River","colors":["#43cea2","#185a9d"]},{"name":"Pastel Orange at the Sun","colors":["#ffb347","#ffcc33"]},{"name":"Twitch","colors":["#6441A5","#2a0845"]},{"name":"Instagram","colors":["#517fa4","#243949"]},{"name":"Flickr","colors":["#ff0084","#33001b"]},{"name":"Vine","colors":["#00bf8f","#001510"]},{"name":"Turquoise flow","colors":["#136a8a","#267871"]},{"name":"Portrait","colors":["#8e9eab","#eef2f3"]},{"name":"Virgin America","colors":["#7b4397","#dc2430"]},{"name":"Koko Caramel","colors":["#D1913C","#FFD194"]},{"name":"Fresh Turboscent","colors":["#F1F2B5","#135058"]},{"name":"Ukraine","colors":["#004FF9","#FFF94C"]},{"name":"Curiosity blue","colors":["#525252","#3d72b4"]},{"name":"Dark Knight","colors":["#BA8B02","#181818"]},{"name":"Piglet","colors":["#ee9ca7","#ffdde1"]},{"name":"Lizard","colors":["#304352","#d7d2cc"]},{"name":"Sage Persuasion","colors":["#CCCCB2","#757519"]},{"name":"Between Night and Day","colors":["#2c3e50","#3498db"]},{"name":"Timber","colors":["#fc00ff","#00dbde"]},{"name":"Passion","colors":["#e53935","#e35d5b"]},{"name":"Clear Sky","colors":["#005C97","#363795"]},{"name":"Master Card","colors":["#f46b45","#eea849"]},{"name":"Back To Earth","colors":["#00C9FF","#92FE9D"]},{"name":"Deep Purple","colors":["#673AB7","#512DA8"]},{"name":"Little Leaf","colors":["#76b852","#8DC26F"]},{"name":"Light Orange","colors":["#FFB75E","#ED8F03"]},{"name":"Green and Blue","colors":["#c2e59c","#64b3f4"]},{"name":"Poncho","colors":["#403A3E","#BE5869"]},{"name":"Back to the Future","colors":["#C02425","#F0CB35"]},{"name":"Blush","colors":["#B24592","#F15F79"]},{"name":"Inbox","colors":["#457fca","#5691c8"]},{"name":"Purplin","colors":["#6a3093","#a044ff"]},{"name":"Pale Wood","colors":["#eacda3","#d6ae7b"]},{"name":"Haikus","colors":["#fd746c","#ff9068"]},{"name":"Pizelex","colors":["#114357","#F29492"]},{"name":"Joomla","colors":["#1e3c72","#2a5298"]},{"name":"Christmas","colors":["#2F7336","#AA3A38"]},{"name":"Minnesota Vikings","colors":["#5614B0","#DBD65C"]},{"name":"Miami Dolphins","colors":["#4DA0B0","#D39D38"]},{"name":"Forest","colors":["#5A3F37","#2C7744"]},{"name":"Nighthawk","colors":["#2980b9","#2c3e50"]},{"name":"Superman","colors":["#0099F7","#F11712"]},{"name":"Suzy","colors":["#834d9b","#d04ed6"]},{"name":"Dark Skies","colors":["#4B79A1","#283E51"]},{"name":"Deep Space","colors":["#000000","#434343"]},{"name":"Decent","colors":["#4CA1AF","#C4E0E5"]},{"name":"Colors Of Sky","colors":["#E0EAFC","#CFDEF3"]},{"name":"Purple White","colors":["#BA5370","#F4E2D8"]},{"name":"Ali","colors":["#ff4b1f","#1fddff"]},{"name":"Alihossein","colors":["#f7ff00","#db36a4"]},{"name":"Red Ocean","colors":["#1D4350","#A43931"]},{"name":"Tranquil","colors":["#EECDA3","#EF629F"]},{"name":"Transfile","colors":["#16BFFD","#CB3066"]},{"name":"Sylvia","colors":["#ff4b1f","#ff9068"]},{"name":"Sweet Morning","colors":["#FF5F6D","#FFC371"]},{"name":"Politics","colors":["#2196f3","#f44336"]},{"name":"Bright Vault","colors":["#00d2ff","#928DAB"]},{"name":"Solid Vault","colors":["#3a7bd5","#3a6073"]},{"name":"Sunset","colors":["#0B486B","#F56217"]},{"name":"Grapefruit Sunset","colors":["#e96443","#904e95"]},{"name":"Deep Sea Space","colors":["#2C3E50","#4CA1AF"]},{"name":"Dusk","colors":["#2C3E50","#FD746C"]},{"name":"Royal","colors":["#141E30","#243B55"]},{"name":"Mauve","colors":["#42275a","#734b6d"]},{"name":"Frost","colors":["#000428","#004e92"]},{"name":"Lush","colors":["#56ab2f","#a8e063"]},{"name":"Firewatch","colors":["#cb2d3e","#ef473a"]},{"name":"Sherbert","colors":["#f79d00","#64f38c"]},{"name":"Blood Red","colors":["#f85032","#e73827"]},{"name":"Sun on the Horizon","colors":["#fceabb","#f8b500"]},{"name":"IIIT Delhi","colors":["#808080","#3fada8"]},{"name":"Dusk","colors":["#ffd89b","#19547b"]},{"name":"50 Shades of Grey","colors":["#bdc3c7","#2c3e50"]},{"name":"Dania","colors":["#BE93C5","#7BC6CC"]},{"name":"Limeade","colors":["#A1FFCE","#FAFFD1"]},{"name":"Disco","colors":["#4ECDC4","#556270"]},{"name":"Love Couple","colors":["#3a6186","#89253e"]},{"name":"Azure Pop","colors":["#ef32d9","#89fffd"]},{"name":"Nepal","colors":["#de6161","#2657eb"]},{"name":"Cosmic Fusion","colors":["#ff00cc","#333399"]},{"name":"Ed's Sunset Gradient","colors":["#ff7e5f","#feb47b"]},{"name":"Black Rosé","colors":["#f4c4f3","#fc67fa"]},{"name":"80's Purple","colors":["#41295a","#2F0743"]},{"name":"Ibiza Sunset","colors":["#ee0979","#ff6a00"]},{"name":"Dawn","colors":["#F3904F","#3B4371"]},{"name":"Mild","colors":["#67B26F","#4ca2cd"]},{"name":"Vice City","colors":["#3494E6","#EC6EAD"]}];
-
-  function rand(min, max) {
-    return Math.floor(Math.random().toFixed(0) + ' ' * (max - min + 1)) + min;
-  }
-
-
-  var test1 = rand(0, 45);
-  var test2 = rand(0, 45);
-
-  var hue1 = getRandomHue(0, 90);
-  var hue2 = getRandomHue(0, 20);
-
-  var random = rand(300, 390);
-
-  function getRandomHue(start, end) {
-    return {
-      hue: rand(random + start, random + end),
-      saturation: 65,
-      lightness: rand(30, 50),
-      alpha: 1
-    };
-  }
+  var gradients = [{"name":"Nimvelo","colors":["#314755","#26a0da"]},{"name":"Noon to Dusk","colors":["#ff6e7f","#bfe9ff"]},{"name":"Cool Brown","colors":["#603813","#b29f94"]},{"name":"Harmonic Energy","colors":["#16A085","#F4D03F"]},{"name":"Sunny Days","colors":["#EDE574","#E1F5C4"]},{"name":"Green Beach","colors":["#02AAB0","#00CDAC"]},{"name":"Intuitive Purple","colors":["#DA22FF","#9733EE"]},{"name":"Emerald Water","colors":["#348F50","#56B4D3"]},{"name":"Lemon Twist","colors":["#3CA55C","#B5AC49"]},{"name":"Horizon","colors":["#003973","#E5E5BE"]},{"name":"Rose Water","colors":["#E55D87","#5FC3E4"]},{"name":"Frozen","colors":["#403B4A","#E7E9BB"]},{"name":"Mango Pulp","colors":["#F09819","#EDDE5D"]},{"name":"Aqua Marine","colors":["#1A2980","#26D0CE"]},{"name":"Sunrise","colors":["#FF512F","#F09819"]},{"name":"Purple Paradise","colors":["#1D2B64","#F8CDDA"]},{"name":"Sea Weed","colors":["#4CB8C4","#3CD3AD"]},{"name":"Pinky","colors":["#DD5E89","#F7BB97"]},{"name":"Cherry","colors":["#EB3349","#F45C43"]},{"name":"Mojito","colors":["#1D976C","#93F9B9"]},{"name":"Mirage","colors":["#16222A","#3A6073"]},{"name":"Steel Gray","colors":["#1F1C2C","#928DAB"]},{"name":"Kashmir","colors":["#614385","#516395"]},{"name":"Electric Violet","colors":["#4776E6","#8E54E9"]},{"name":"Venice Blue","colors":["#085078","#85D8CE"]},{"name":"Bora Bora","colors":["#2BC0E4","#EAECC6"]},{"name":"Moss","colors":["#134E5E","#71B280"]},{"name":"Shroom Haze","colors":["#5C258D","#4389A2"]},{"name":"Mystic","colors":["#757F9A","#D7DDE8"]},{"name":"Midnight City","colors":["#232526","#414345"]},{"name":"Sea Blizz","colors":["#1CD8D2","#93EDC7"]},{"name":"Opa","colors":["#3D7EAA","#FFE47A"]},{"name":"Titanium","colors":["#283048","#859398"]},{"name":"Mantle","colors":["#24C6DC","#514A9D"]},{"name":"Dracula","colors":["#DC2424","#4A569D"]},{"name":"Peach","colors":["#ED4264","#FFEDBC"]},{"name":"Moonrise","colors":["#DAE2F8","#D6A4A4"]},{"name":"Clouds","colors":["#ECE9E6","#FFFFFF"]},{"name":"Stellar","colors":["#7474BF","#348AC7"]},{"name":"Bourbon","colors":["#EC6F66","#F3A183"]},{"name":"Calm Darya","colors":["#5f2c82","#49a09d"]},{"name":"Influenza","colors":["#C04848","#480048"]},{"name":"Army","colors":["#414d0b","#727a17"]},{"name":"Miaka","colors":["#FC354C","#0ABFBC"]},{"name":"Pinot Noir","colors":["#4b6cb7","#182848"]},{"name":"Day Tripper","colors":["#f857a6","#ff5858"]},{"name":"Namn","colors":["#a73737","#7a2828"]},{"name":"Blurry Beach","colors":["#d53369","#cbad6d"]},{"name":"Vasily","colors":["#e9d362","#333333"]},{"name":"A Lost Memory","colors":["#DE6262","#FFB88C"]},{"name":"Petrichor","colors":["#666600","#999966"]},{"name":"Jonquil","colors":["#FFEEEE","#DDEFBB"]},{"name":"Sirius Tamed","colors":["#EFEFBB","#D4D3DD"]},{"name":"Misty Meadow","colors":["#215f00","#e4e4d9"]},{"name":"Aqualicious","colors":["#50C9C3","#96DEDA"]},{"name":"Moor","colors":["#616161","#9bc5c3"]},{"name":"Almost","colors":["#ddd6f3","#faaca8"]},{"name":"Forever Lost","colors":["#5D4157","#A8CABA"]},{"name":"Winter","colors":["#E6DADA","#274046"]},{"name":"Autumn","colors":["#DAD299","#B0DAB9"]},{"name":"Candy","colors":["#D3959B","#BFE6BA"]},{"name":"Reef","colors":["#00d2ff","#3a7bd5"]},{"name":"Dirty Fog","colors":["#B993D6","#8CA6DB"]},{"name":"Earthly","colors":["#649173","#DBD5A4"]},{"name":"Virgin","colors":["#C9FFBF","#FFAFBD"]},{"name":"Ash","colors":["#606c88","#3f4c6b"]},{"name":"Shadow Night","colors":["#000000","#53346D"]},{"name":"Cherryblossoms","colors":["#FBD3E9","#BB377D"]},{"name":"Starfall","colors":["#F0C27B","#4B1248"]},{"name":"Man of Steel","colors":["#780206","#061161"]},{"name":"Amethyst","colors":["#9D50BB","#6E48AA"]},{"name":"Cheer Up Emo Kid","colors":["#556270","#FF6B6B"]},{"name":"Shore","colors":["#70e1f5","#ffd194"]},{"name":"Facebook Messenger","colors":["#00c6ff","#0072ff"]},{"name":"ServQuick","colors":["#485563","#29323c"]},{"name":"Metallic Toad","colors":["#abbaab","#ffffff"]},{"name":"Between The Clouds","colors":["#73C8A9","#373B44"]},{"name":"Hersheys","colors":["#1e130c","#9a8478"]},{"name":"Talking To Mice Elf","colors":["#948E99","#2E1437"]},{"name":"Purple Bliss","colors":["#360033","#0b8793"]},{"name":"Predawn","colors":["#FFA17F","#00223E"]},{"name":"Endless River","colors":["#43cea2","#185a9d"]},{"name":"Twitch","colors":["#6441A5","#2a0845"]},{"name":"Instagram","colors":["#517fa4","#243949"]},{"name":"Turquoise flow","colors":["#136a8a","#267871"]},{"name":"Portrait","colors":["#8e9eab","#eef2f3"]},{"name":"Virgin America","colors":["#7b4397","#dc2430"]},{"name":"Koko Caramel","colors":["#D1913C","#FFD194"]},{"name":"Fresh Turboscent","colors":["#F1F2B5","#135058"]},{"name":"Ukraine","colors":["#004FF9","#FFF94C"]},{"name":"Curiosity blue","colors":["#525252","#3d72b4"]},{"name":"Dark Knight","colors":["#BA8B02","#181818"]},{"name":"Piglet","colors":["#ee9ca7","#ffdde1"]},{"name":"Lizard","colors":["#304352","#d7d2cc"]},{"name":"Sage Persuasion","colors":["#CCCCB2","#757519"]},{"name":"Between Night and Day","colors":["#2c3e50","#3498db"]},{"name":"Clear Sky","colors":["#005C97","#363795"]},{"name":"Master Card","colors":["#f46b45","#eea849"]},{"name":"Deep Purple","colors":["#673AB7","#512DA8"]},{"name":"Light Orange","colors":["#FFB75E","#ED8F03"]},{"name":"Green and Blue","colors":["#c2e59c","#64b3f4"]},{"name":"Poncho","colors":["#403A3E","#BE5869"]},{"name":"Blush","colors":["#B24592","#F15F79"]},{"name":"Inbox","colors":["#457fca","#5691c8"]},{"name":"Purplin","colors":["#6a3093","#a044ff"]},{"name":"Pale Wood","colors":["#eacda3","#d6ae7b"]},{"name":"Haikus","colors":["#fd746c","#ff9068"]},{"name":"Pizelex","colors":["#114357","#F29492"]},{"name":"Joomla","colors":["#1e3c72","#2a5298"]},{"name":"Christmas","colors":["#2F7336","#AA3A38"]},{"name":"Miami Dolphins","colors":["#4DA0B0","#D39D38"]},{"name":"Forest","colors":["#5A3F37","#2C7744"]},{"name":"Nighthawk","colors":["#2980b9","#2c3e50"]},{"name":"Suzy","colors":["#834d9b","#d04ed6"]},{"name":"Dark Skies","colors":["#4B79A1","#283E51"]},{"name":"Deep Space","colors":["#000000","#434343"]},{"name":"Decent","colors":["#4CA1AF","#C4E0E5"]},{"name":"Colors Of Sky","colors":["#E0EAFC","#CFDEF3"]},{"name":"Purple White","colors":["#BA5370","#F4E2D8"]},{"name":"Tranquil","colors":["#EECDA3","#EF629F"]},{"name":"Transfile","colors":["#16BFFD","#CB3066"]},{"name":"Sylvia","colors":["#ff4b1f","#ff9068"]},{"name":"Politics","colors":["#2196f3","#f44336"]},{"name":"Bright Vault","colors":["#00d2ff","#928DAB"]},{"name":"Solid Vault","colors":["#3a7bd5","#3a6073"]},{"name":"Deep Sea Space","colors":["#2C3E50","#4CA1AF"]},{"name":"Dusk","colors":["#2C3E50","#FD746C"]},{"name":"Royal","colors":["#141E30","#243B55"]},{"name":"Mauve","colors":["#42275a","#734b6d"]},{"name":"Frost","colors":["#000428","#004e92"]},{"name":"Lush","colors":["#56ab2f","#a8e063"]},{"name":"Sherbert","colors":["#f79d00","#64f38c"]},{"name":"Sun on the Horizon","colors":["#fceabb","#f8b500"]},{"name":"IIIT Delhi","colors":["#808080","#3fada8"]},{"name":"Dusk","colors":["#ffd89b","#19547b"]},{"name":"50 Shades of Grey","colors":["#bdc3c7","#2c3e50"]},{"name":"Dania","colors":["#BE93C5","#7BC6CC"]},{"name":"Limeade","colors":["#A1FFCE","#FAFFD1"]},{"name":"Disco","colors":["#4ECDC4","#556270"]},{"name":"Love Couple","colors":["#3a6186","#89253e"]},{"name":"Nepal","colors":["#de6161","#2657eb"]},{"name":"Cosmic Fusion","colors":["#ff00cc","#333399"]},{"name":"Ed's Sunset Gradient","colors":["#ff7e5f","#feb47b"]},{"name":"Black Rosé","colors":["#f4c4f3","#fc67fa"]},{"name":"80's Purple","colors":["#41295a","#2F0743"]},{"name":"Dawn","colors":["#F3904F","#3B4371"]},{"name":"Mild","colors":["#67B26F","#4ca2cd"]},{"name":"Vice City","colors":["#3494E6","#EC6EAD"]}];
 
   var gradient = gradients[Math.floor(Math.random()*gradients.length)];
-
-  console.log(gradient);
-
-  function RGB2HSV(rgb) {
-    hsv = new Object();
-    max=max3(rgb[0],rgb[1],rgb[2]);
-    dif=max-min3(rgb[0],rgb[1],rgb[2]);
-    hsv.saturation=(max==0.0)?0:(100*dif/max);
-    if (hsv.saturation==0) hsv.hue=0;
-    else if (rgb[0]==max) hsv.hue=60.0*(rgb[1]-rgb[2])/dif;
-    else if (rgb[1]==max) hsv.hue=120.0+60.0*(rgb[2]-rgb[0])/dif;
-    else if (rgb[2]==max) hsv.hue=240.0+60.0*(rgb[0]-rgb[1])/dif;
-    if (hsv.hue<0.0) hsv.hue+=360.0;
-    hsv.value=Math.round(max*100/255);
-    hsv.hue=Math.round(hsv.hue);
-    hsv.saturation=Math.round(hsv.saturation);
-    return hsv;
-  }
-
-  // RGB2HSV and HSV2RGB are based on Color Match Remix [http://color.twysted.net/]
-  // which is based on or copied from ColorMatch 5K [http://colormatch.dk/]
-  function HSV2RGB(hsv) {
-    var rgb=[];
-    if (hsv.saturation==0) {
-      rgb[0]=rgb[1]=rgb[2]=Math.round(hsv.value*2.55);
-    } else {
-      hsv.hue/=60;
-      hsv.saturation/=100;
-      hsv.value/=100;
-      i=Math.floor(hsv.hue);
-      f=hsv.hue-i;
-      p=hsv.value*(1-hsv.saturation);
-      q=hsv.value*(1-hsv.saturation*f);
-      t=hsv.value*(1-hsv.saturation*(1-f));
-      switch(i) {
-        case 0: rgb[0]=hsv.value; rgb[1]=t; rgb[2]=p; break;
-        case 1: rgb[0]=q; rgb[1]=hsv.value; rgb[2]=p; break;
-        case 2: rgb[0]=p; rgb[1]=hsv.value; rgb[2]=t; break;
-        case 3: rgb[0]=p; rgb[1]=q; rgb[2]=hsv.value; break;
-        case 4: rgb[0]=t; rgb[1]=p; rgb[2]=hsv.value; break;
-        default: rgb[0]=hsv.value; rgb[1]=p; rgb[2]=q;
-      }
-      rgb[0]=Math.round(rgb[0]*255);
-      rgb[1]=Math.round(rgb[1]*255);
-      rgb[2]=Math.round(rgb[2]*255);
-    }
-    return rgb;
-  }
-
-  //Adding HueShift via Jacob (see comments)
-  function HueShift(h,s) {
-    h+=s; while (h>=360.0) h-=360.0; while (h<0.0) h+=360.0; return h;
-  }
-
-  //min max via Hairgami_Master (see comments)
-  function min3(a,b,c) {
-    return (a<b)?((a<c)?a:c):((b<c)?b:c);
-  }
-  function max3(a,b,c) {
-    return (a>b)?((a>c)?a:c):((b>c)?b:c);
-  }
 
   function pickHex(color1, color2, weight) {
     var p = weight;
@@ -614,22 +437,10 @@
     var yiq = ((r*299)+(g*587)+(b*114))/1000;
     return (yiq >= 128) ? 'black' : 'white';
   }
-  document.querySelector('.landing__left-background').style.background = `linear-gradient(to top left, ${gradient.colors.join(',')})`;
-
-//  document.querySelector('.footer__left-background').style.background = `linear-gradient(to top left, ${gradient.colors.map(function (color) { return invertColor(color) }).join(',')})`;
-
-  var pickHexArgs = [hexToRgb(gradient.colors[0]), hexToRgb(gradient.colors[gradient.colors.length - 1])];
-
-  var rgb = pickHex.apply(null, pickHexArgs.concat(0.9));
 
   function shadeRGBColor(f, percent) {
     var t=percent<0?0:255,p=percent<0?percent*-1:percent,R=parseInt(f[0]),G=parseInt(f[1]),B=parseInt(f[2]);
     return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
-  }
-
-  function blendRGBColors(c0, c1, p) {
-    var f=c0.split(","),t=c1.split(","),R=parseInt(f[0].slice(4)),G=parseInt(f[1]),B=parseInt(f[2]);
-    return "rgb("+(Math.round((parseInt(t[0].slice(4))-R)*p)+R)+","+(Math.round((parseInt(t[1])-G)*p)+G)+","+(Math.round((parseInt(t[2])-B)*p)+B)+")";
   }
 
   function rgbToHex(r, g, b) {
@@ -646,6 +457,12 @@
     color = "#" + color;                  // prepend #
     return color;
   }
+
+  document.querySelector('.landing__network').style.background = `linear-gradient(to top left, ${gradient.colors.join(',')})`;
+
+  var pickHexArgs = [hexToRgb(gradient.colors[0]), hexToRgb(gradient.colors[gradient.colors.length - 1])];
+  var rgb = pickHex.apply(null, pickHexArgs.concat(0.9));
+
   var colors = [];
 
   for (var i = 0; i < 7; i++) {
@@ -666,15 +483,15 @@
   addCssRule('.logo .left-bottom', 'fill: ' + colors[5] + ' !important');
   addCssRule('.logo .right-bottom', 'fill: ' + colors[6] + ' !important');
 
+
   // complement
-  var temphsv=RGB2HSV(rgb);
-  temphsv.hue=HueShift(temphsv.hue,45.0);
-  var temprgb=HSV2RGB(temphsv);
   var hex = invertColor(rgbToHex(rgb[0], rgb[1], rgb[2]));
+
+  addCssRule('.footer a:hover', 'color: ' + hex + ' !important');
 
   document.querySelector('.get-started .button').style.background = hex;
   var darkened = shadeRGBColor(hexToRgb(hex), -0.5);
-  document.querySelector('.get-started .button').style.boxShadow = '0 5px 0 ' + darkened;
+  document.querySelector('.get-started .button').style.boxShadow = '0 3px 0 ' + darkened;
   var lightened = shadeRGBColor(hexToRgb(hex), 0.1);
 
    function addCssRule(/* string */ selector, /* string */ rule) {
@@ -705,25 +522,25 @@
   };
   var textColor = getContrastYIQ(hex);
 
-  if (textColor === 'white') {
-    addCssRule('.logo .top', 'fill: ' + inverse[0] + ' !important');
-    addCssRule('.logo .left-top', 'fill: ' + inverse[1] + ' !important');
-    addCssRule('.logo .right-top', 'fill: ' + inverse[2] + ' !important');
-    addCssRule('.logo .left-middle', 'fill: ' + inverse[3] + ' !important');
-    addCssRule('.logo .right-middle', 'fill: ' + inverse[4] + ' !important');
-    addCssRule('.logo .left-bottom', 'fill: ' + inverse[5] + ' !important');
-    addCssRule('.logo .right-bottom', 'fill: ' + inverse[6] + ' !important');
-  }
-   var ripple = textColor === 'black' ? '255, 255, 255' : '0, 0, 0';
-//  addCssRule('.get-started .button:hover { background-color: red; }', 0);
-//  addCssRule('.get-started .button:hover { background-color: red; }', 0);
+  if (textColor === 'black') {
+    document.querySelector('.get-started__ripples').classList.remove('get-started__ripples--black');
+    document.querySelector('.get-started__ripples').classList.add('get-started__ripples--white');
 
+    addCssRule('.footer__author a:hover', 'color: ' + shadeRGBColor(hexToRgb(hex), -0.4) + ' !important');
+    addCssRule('.footer__author a', 'color: ' + hex + ' !important');
+    addCssRule('.navigation__link:hover', 'color: #262626');
+  } else {
+    addCssRule('.navigation__link:hover, .footer__author a:hover', 'color: ' + hex + ' !important');
+    addCssRule('.footer__author a', 'color: ' + invertColor(hex) + ' !important');
+  }
+
+  var ripple = textColor === 'black' ? '255, 255, 255' : '0, 0, 0';
   addCssRule('.get-started .button:active', 'background-color: ' + shadeRGBColor(hexToRgb(hex), -0.4) + ' !important');
   addCssRule('.get-started .button:hover', 'background-color: ' + lightened + ' !important');
-  addCssRule('.get-started__ripple', 'background: rgba(' + ripple + ', 0.3) !important');
-  addCssRule('.get-started__button:hover .get-started__ripple', 'background: rgba(' + ripple + ', 0.4) !important');
-  addCssRule('.get-started__button:active .get-started__ripple', 'background: rgba(' + ripple + ', 0.5) !important');
 
   document.querySelector('.get-started .button').style.color = textColor;
 
+  console.log('Using ', gradient.name);
+
+  setupCanvas(header, textColor === 'white' ? 'black' : 'white');
 </script>
