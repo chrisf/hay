@@ -760,7 +760,7 @@ pre {
 }
 
 .about__line--blue {
-  background: rgba(0,203,231, 0.2);
+  background: rgba(0,0,231, 0.2);
   transform: skew(0,6.5deg);
   z-index: -2;
 }
