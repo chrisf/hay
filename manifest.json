@@ -3,7 +3,7 @@
   "short_name": "hay",
   "theme_color": "#20252c",
   "background_color": "#20252c",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
