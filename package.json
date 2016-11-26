@@ -33,7 +33,6 @@
     "@types/progress": "^1.1.28",
     "@types/rimraf": "^0.0.28",
     "eslint": "^3.10.2",
-    "flow-bin": "^0.35.0",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
     "ts-node": "^1.7.0",
