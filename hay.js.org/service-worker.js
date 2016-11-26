@@ -1,6 +1,5 @@
 var CACHE_NAME = 'hay-cache';
 var urlsToCache = [
-  '/',
   '/css/main.css'
 ];
 
