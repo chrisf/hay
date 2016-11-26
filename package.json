@@ -13,8 +13,8 @@
     "type": "git"
   },
   "scripts": {
-    "build": "babel src --out-dir lib",
-    "build:dev": "nodemon --exec npm run build --watch src -e js --verbose",
+    "build": "tsc -p tsconfig.json",
+    "build:dev": "tsc -p tsconfig.json -w",
     "deploy": "./scripts/deploy.sh",
     "test": "mocha --compilers ts:ts-node/register"
   },
@@ -32,13 +32,6 @@
     "@types/nunjucks": "^0.0.32",
     "@types/progress": "^1.1.28",
     "@types/rimraf": "^0.0.28",
-    "babel-cli": "^6.18.0",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-plugin-transform-flow-strip-types": "^6.18.0",
-    "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-node5": "^11.1.0",
-    "babel-preset-stage-0": "^6.16.0",
     "eslint": "^3.10.2",
     "flow-bin": "^0.35.0",
     "mocha": "^3.1.2",
