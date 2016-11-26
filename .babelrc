@@ -1,6 +1,7 @@
 {
   "presets": ["node5", "stage-0"],
   "plugins": [
+    "transform-async-to-generator",
     "transform-flow-strip-types",
     "transform-inline-imports-commonjs",
     [
