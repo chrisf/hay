@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7"],
+    "moduleResolution": "node",
+    "outDir": "lib",
+    "sourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "removeComments": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
