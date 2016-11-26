@@ -1,0 +1,94 @@
+import * as commander from 'commander';
+
+import { BaseCommand } from './base';
+
+import { Hay } from '../hay';
+
+import { LayoutsBuilder } from '../build/layouts';
+import { PartialsBuilder } from '../build/partials';
+import { PostBuilder } from '../build/posts';
+import { CopyBuilder } from '../build/copy';
+
+
+export class BaleCommand extends BaseCommand {
+  private layoutsBuilder: LayoutsBuilder;
+  private partialsBuilder: PartialsBuilder;
+  private postBuilder: PostBuilder;
+  private copyBuilder: CopyBuilder;
+
+  constructor(hay: Hay) {
+    super(hay);
+
+    this.layoutsBuilder = new LayoutsBuilder(this.hay);
+    this.partialsBuilder = new PartialsBuilder(this.hay);
+    this.postBuilder = new PostBuilder(this.hay);
+    this.copyBuilder = new CopyBuilder(this.hay);
+  }
+
+  static destroy(commander: commander.ICommand) {
+
+  }
+
+  static options(commander: commander.ICommand) {
+    commander.usage('bale [flags]');
+    commander.option('--watch', 'watch for changes');
+  }
+
+  public async run() {
+    await this.hay.fileSystem.unlink(this.hay.config.values.destination);
+
+    await super.queue([
+      this.partialsBuilder,
+      this.layoutsBuilder,
+      this.postBuilder,
+      this.copyBuilder
+    ]);
+
+    let time: string = ((Date.now() - this.hay.startTime) / 1000).toFixed(2);
+    this.hay.reporter.log('');
+    this.hay.reporter.info(`build took ${time}s\n`);
+  }
+
+  public finish() {
+    this.hay.reporter.finish(`<green>✓</green>  finished posts`);
+  }
+
+  public async watch(): Promise<void> {
+    // this.hay.reporter.info('running a normal build first\n');
+
+    await this.run();
+
+    await super.watch([
+      this.partialsBuilder,
+      this.layoutsBuilder,
+      this.postBuilder,
+      this.copyBuilder
+    ]);
+  }
+}
+
+
+// export async function run(config: HayConfig, reporter: Console, program: Program): Promise<any> {
+//   await fs.unlink(config.destination);
+//   await fs.unlink(config.destination); && mkdirp(config.destination);
+//
+//   if (program.watch) {
+//     reporter.info('running normal build first\n');
+//   }
+//   await layouts(4, config, reporter, program);
+//   await includes(4, config, reporter, program);
+//   await posts(4, config, reporter, program);
+//   await copy(4, config, reporter, program);
+//
+//   reset();
+//
+//   let time = ((Date.now() - program.startTime) / 1000).toFixed(2);
+//   reporter.info(`build took ${time}s\n`);
+//
+//   if (program.watch) {
+//     return watch(config, reporter, program)
+//       .catch(err => {
+//         console.log('handle error a', err);
+//       });
+//   }
+// }
