@@ -28,6 +28,7 @@
     "@types/js-yaml": "^3.5.28",
     "@types/marked": "^0.0.28",
     "@types/mkdirp": "^0.3.29",
+    "@types/mocha": "^2.2.33",
     "@types/node": "^6.0.48",
     "@types/nunjucks": "^0.0.32",
     "@types/progress": "^1.1.28",
@@ -39,7 +40,9 @@
     "typescript": "next"
   },
   "dependencies": {
+    "@types/chai": "^3.4.34",
     "ansi-styles": "^2.2.1",
+    "chai": "^3.5.0",
     "chokidar": "^1.6.1",
     "commander": "^2.9.0",
     "express": "^4.14.0",
