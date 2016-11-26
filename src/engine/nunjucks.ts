@@ -4,10 +4,6 @@ import { Hay } from '../hay';
 import { TemplateEngine, FileInfo } from '../template';
 import invariant from '../invariant';
 
-interface TemplateCache {
-  [x: string]: NunjucksTemplate
-}
-
 const CACHE: Map<string, NunjucksTemplate> = new Map<string, NunjucksTemplate>();
 
 class NunjucksLoader {
@@ -71,7 +67,6 @@ export class NunjucksTemplate {
 
 export class NunjucksTemplateEngine extends TemplateEngine {
   private env: nunjucks.Environment;
-  private template: NunjucksTemplate;
 
   constructor(hay: Hay) {
     super(hay);
