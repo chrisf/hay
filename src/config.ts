@@ -123,7 +123,7 @@ export class Config {
         styles: ['gray'],
         text: 'destination'
       }
-    })(`<dim>${this.values.destination}</dim>`);
+    })(`<dim>${this.values.destination}</dim>\n`);
   }
 
   public resolvePaths() {
