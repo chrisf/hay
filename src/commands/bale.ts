@@ -57,9 +57,9 @@ export class BaleCommand extends BaseCommand {
   }
 
   public async watch(): Promise<void> {
-    // this.hay.reporter.info('running a normal build first\n');
-
     await this.run();
+
+    this.hay.reporter.info('watching for changes..');
 
     await super.watch([
       this.partialsBuilder,
