@@ -1837,6 +1837,13 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+liquid-node:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/liquid-node/-/liquid-node-2.6.1.tgz#bd388b1459fef4fc12c993c80699a1e1e41d7570"
+  dependencies:
+    native-or-bluebird "~1.2.0"
+    strftime "~0.9.2"
+
 livereload-js@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/livereload-js/-/livereload-js-2.2.2.tgz#6c87257e648ab475bc24ea257457edcc1f8d0bc2"
@@ -2083,6 +2090,10 @@ mute-stream@0.0.5:
 nan@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
+
+native-or-bluebird@~1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/native-or-bluebird/-/native-or-bluebird-1.2.0.tgz#39c47bfd7825d1fb9ffad32210ae25daadf101c9"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -2956,6 +2967,10 @@ stream-combiner@~0.0.4:
 stream-shift@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.0.tgz#d5c752825e5367e786f78e18e445ea223a155952"
+
+strftime@~0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/strftime/-/strftime-0.9.2.tgz#bcca2861f29456d372aaf6a17811c8bc6f39f583"
 
 string_decoder@~0.10.25, string_decoder@~0.10.x, string_decoder@0.10:
   version "0.10.31"
