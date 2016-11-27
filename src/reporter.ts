@@ -45,14 +45,6 @@ export type GutterOptions = {
   text: string
 };
 
-export type ProgressBarOptions = {
-  width: number,
-  total: number,
-  complete: string,
-  incomplete: string,
-  clear: boolean
-};
-
 export enum LOG_LEVEL {
   None,
   Error,
@@ -61,54 +53,6 @@ export enum LOG_LEVEL {
   Log,
   Success
 };
-
-export class ProgressBar {
-  public category: string;
-  public count: number;
-  public format: string = '[<green>:bar</green>] <green><bold>:percent</bold></green> <white>:message</white>';
-  public gutter: GutterOptions = {
-    color: 'gray',
-    text: ':category'
-  };
-  public length: number;
-  public options: ProgressBarOptions = {
-    width: 30,
-    total: 100,
-    complete: '=',
-    incomplete: ' ',
-    clear: true
-  };
-  public infoString: string;
-
-  public progress: progress;
-
-  constructor(public reporter: Reporter) {
-    this.format = reporter.createMessage(this.gutter, this.format);
-  }
-
-  setCategory(category: string) {
-    this.category = leftPad(category, this.reporter.gutterWidth);
-  }
-
-  setLength(length: number) {
-    this.options.total = length;
-  }
-
-  start() {
-    this.progress = new progress(this.format, this.options);
-    this.count = 0;
-  }
-
-  tick(infoString: string) {
-    // this.infoString = infoString;
-    // this.count++;
-    //
-    // this.progress.tick({
-    //   message: infoString,
-    //   category: this.category
-    // });
-  }
-}
 
 export type OutputSettings = {
   output?: NodeJS.WritableStream,
@@ -171,10 +115,6 @@ export class Reporter {
     }
     gutter.adjust = -this.gutterWidth;
     return `${this.createGutter(gutter)} ${this.parseTags(message)}`;
-  }
-
-  public createProgressBar(): ProgressBar {
-    return new ProgressBar(this);
   }
 
   public step(number: number, total: number, message: string) {

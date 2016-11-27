@@ -51,8 +51,6 @@ export class PostBuilder extends BaseBuilder {
       path.resolve(outputDir, info.output.fileName),
       output
     );
-
-    this.progressBar.tick(`loaded ${file.fileName}`);
   }
 
   async removeFile(file: File): Promise<any> {
@@ -61,10 +59,6 @@ export class PostBuilder extends BaseBuilder {
 
   async run(): Promise<any> {
     let files: File[] = await super.loadFiles();
-
-    this.progressBar.setLength(files.length);
-    this.progressBar.setCategory(`compile posts`);
-    this.progressBar.start();
 
     return Promise.all(files.map(async (file: File) => await this.parseFile(file)));
   }
@@ -112,7 +106,6 @@ export class PostBuilder extends BaseBuilder {
       })
       .on('ready', () => {
         this.WATCH_INITIATED = true;
-        this.hay.reporter.info('waiting for changes..');
       });
   }
 
