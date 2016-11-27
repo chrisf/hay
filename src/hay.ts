@@ -13,8 +13,7 @@ import {
   TemplateParser
 } from './template';
 
-export interface HayFileSystem<T> {
-  glob: any;
+export interface HayFileSystem {
   copy: (...args: any[]) => Promise<any>;
   getFileExtension: (file: string) => string;
   mkDir: (...args: any[]) => Promise<any>;
