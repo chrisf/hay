@@ -1,0 +1,6 @@
+{
+  "source": "hay.js.org",
+  "destination": "build",
+  "partialsDir": "_includes",
+  "webpackConfig": "webpack.config.js"
+}

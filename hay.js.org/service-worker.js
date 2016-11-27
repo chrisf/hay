@@ -1,4 +1,4 @@
-var CACHE_NAME = 'hay-cache';
+var CACHE_NAME = 'hay-static-cache';
 var urlsToCache = [
   '/css/main.css'
 ];
