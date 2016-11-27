@@ -1,18 +1,20 @@
 import * as path from 'path';
 import * as glob from 'glob';
+import * as chokidar from 'chokidar';
+import { FSWatcher } from 'fs';
 
 import { BaseBuilder } from './base';
 import { File, FileInfo, FileParsed } from '../template';
 import { Hay, HayFileSystem } from '../hay';
 import { ConfigValues } from '../config';
 
+const FILE_REGISTRY: Map<string, string> = new Map<string, string>();
+
 export class CopyBuilder extends BaseBuilder {
   public template: string;
 
   constructor(hay: Hay) {
     super(hay);
-
-    this.progressBar = this.hay.reporter.createProgressBar();
 
     super.setConfig({
       name: 'file',
@@ -89,20 +91,26 @@ export class CopyBuilder extends BaseBuilder {
 
       const destinationFolder: string = path.resolve(config.destination, info.output.directory);
 
+      FILE_REGISTRY.set(
+        path.resolve(config.source, file),
+        path.resolve(destinationFolder, info.output.fileName)
+      );
+
       await fileSystem.mkDir(destinationFolder);
       await fileSystem.writeFile(
         path.resolve(destinationFolder, info.output.fileName),
         output
       );
-
-      this.progressBar.tick(`compiled ${file}`);
     } else {
-      await fileSystem.copy(
+      FILE_REGISTRY.set(
         path.resolve(config.source, file),
         path.resolve(config.destination, info.output.directory, info.output.fileName)
       );
 
-      this.progressBar.tick(`copied ${file}`);
+      await fileSystem.copy(
+        path.resolve(config.source, file),
+        path.resolve(config.destination, info.output.directory, info.output.fileName)
+      );
     }
   }
 
@@ -113,14 +121,68 @@ export class CopyBuilder extends BaseBuilder {
   async run(): Promise<any> {
     let files: string[] = await this.loadOtherFiles();
 
-    this.progressBar.setLength(files.length - 1);
-    this.progressBar.setCategory(`copy files`);
-    this.progressBar.start();
-
     return Promise.all(files.map(async (file: string) => await this.parseOtherFile(file)));
   }
 
   public finish() {
     this.hay.reporter.finish(`<green>✓</green>  copied files`);
+  }
+
+  public async watch() {
+    let config: ConfigValues = this.hay.config.values;
+
+    let watcher: FSWatcher = chokidar.watch(this.config.directory, {
+      ignored: [
+        /[\/\\]\./,
+        path.relative(config.source, config.partialsDir) + '/**/*',
+        path.relative(config.source, config.postsDir) + '/**/*',
+        path.relative(config.source, config.layoutsDir) + '/**/*',
+        ...config.exclude
+      ],
+      persistent: true,
+      cwd: this.config.directory
+    });
+
+    watcher
+      .on('add', async (changedFile: string) => {
+        if (!this.WATCH_INITIATED) {
+          return;
+        }
+        await this.addOrChange(changedFile);
+        this.hay.reporter.success(`copy: added ${changedFile}`);
+      })
+      .on('change', async (changedFile: string) => {
+        if (!this.WATCH_INITIATED) {
+          return;
+        }
+        await this.addOrChange(changedFile);
+        this.hay.reporter.success(`copy: updated ${changedFile}`);
+      })
+      .on('unlink', async (changedFile: string) => {
+        if (!this.WATCH_INITIATED) {
+          return;
+        }
+
+        if (FILE_REGISTRY.has(changedFile)) {
+          let changedFileMapping =  <string>FILE_REGISTRY.get(changedFile);
+
+          if (changedFileMapping) {
+            const directoryToDelete = path.dirname(changedFileMapping);
+            await this.hay.fileSystem.unlink(directoryToDelete);
+          }
+        }
+        this.hay.reporter.success({ gutter: { styles: ['red'] } })(`removed ${changedFile}`);
+      })
+      .on('ready', () => {
+        this.WATCH_INITIATED = true;
+      });
+  }
+
+  private async addOrChange(changedFile: string): Promise<void> {
+    await this.parseOtherFile(changedFile);
+
+    if (this.hay.server) {
+      this.hay.server.notifyClients(['index.html']);
+    }
   }
 }
