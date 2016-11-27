@@ -1,4 +1,3 @@
-// @flow
 import * as ansi from 'ansi-styles';
 import * as progress from 'progress';
 import * as readline from 'readline';
@@ -39,14 +38,14 @@ function leftPad(str: string, len: number, ch?: string | number) {
   return pad + str;
 }
 
-type GutterOptions = {
+export type GutterOptions = {
   adjust?: number,
   color: string,
   hideColons?: boolean,
   text: string
 };
 
-type ProgressBarOptions = {
+export type ProgressBarOptions = {
   width: number,
   total: number,
   complete: string,
@@ -111,7 +110,7 @@ export class ProgressBar {
   }
 }
 
-type OutputSettings = {
+export type OutputSettings = {
   output?: NodeJS.WritableStream,
   gutter?: {
     styles?: string[],
@@ -124,12 +123,12 @@ type OutputSettings = {
   [x: string]: any
 };
 
-type ReporterOptions = {
+export type ReporterOptions = {
   suppressLevel: number
 };
 
-type outputArgs = OutputSettings | string;
-type outputCurry = (arg: outputArgs) => outputCurry;
+export type outputArgs = OutputSettings | string;
+export type outputCurry = (arg: outputArgs) => outputCurry;
 
 export class Reporter {
   public gutterWidth: number = 15;
