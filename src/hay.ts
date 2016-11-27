@@ -1,9 +1,7 @@
-// @flow
 import { Config } from './config';
-import { FileSystem } from './file-system';
+import { FileSystem } from './files/file-system';
 import { Reporter } from './reporter';
 import * as commander from 'commander';
-import * as express from 'express';
 
 import invariant from './invariant';
 import { HayCommand, HayCommandInstance } from './cli';
@@ -15,13 +13,25 @@ import {
   TemplateParser
 } from './template';
 
+export interface HayFileSystem<T> {
+  glob: any;
+  copy: (...args: any[]) => Promise<any>;
+  getFileExtension: (file: string) => string;
+  mkDir: (...args: any[]) => Promise<any>;
+  readDir: (...args: any[]) => Promise<any>;
+  readFile: (...args: any[]) => Promise<any>;
+  removeExtension: (file: string) => string;
+  unlink: (...args: any[]) => Promise<any>;
+  writeFile: (...args: any[]) => Promise<any>;
+}
+
 const engineStore: Map<string, EngineConstructor> = new Map<string, EngineConstructor>();
 const parserStore: Map<string, ParserConstructor> = new Map<string, ParserConstructor>();
 
 export class Hay {
   public config: Config;
   public engine: TemplateEngine;
-  public fileSystem: FileSystem = new FileSystem();
+  public fileSystem: HayFileSystem = new FileSystem();
   public parsers: TemplateParser[] = [];
   public reporter: Reporter;
   public server: any;
