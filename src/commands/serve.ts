@@ -105,24 +105,28 @@ export class ServeCommand extends BaseCommand {
         }
 
         if (typeof dir === 'string') {
-          res.end(dir, 'binary');
+          return res.end(dir, 'binary');
         }
 
         if (dir[req.url]) {
-          res.end(dir[req.url], 'binary');
+          return res.end(dir[req.url], 'binary');
         }
+
+        return next();
       }
 
       if (typeof file === 'string') {
         res.writeHead(200, { 'Content-Type': mime.lookup(url) });
-        res.end(file, 'binary');
+        return res.end(file, 'binary');
       }
 
       if (file['index.html']) {
         res.set('Content-Type', mime.lookup('.html'));
 
-        res.end(file['index.html']);
+        return res.end(file['index.html']);
       }
+
+      return next();
     });
 
     server.use((req: any, res: any) => {
