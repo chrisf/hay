@@ -40,7 +40,7 @@ export class NunjucksTemplate {
     }
   }
 
-  public render(data: any): string {
+  public async render(data: any): Promise<string> {
     let compiledTemplate: string = this.template.render(data);
 
     if (this.info.options && this.info.options.layout) {
@@ -54,7 +54,7 @@ export class NunjucksTemplate {
 
       let parentTemplate: NunjucksTemplate = <NunjucksTemplate> CACHE.get(parentFileName);
 
-      return parentTemplate.render({
+      return await parentTemplate.render({
         ...data,
         page: data.page || this.info.options,
         content: compiledTemplate
