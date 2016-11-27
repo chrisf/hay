@@ -129,7 +129,7 @@ export class ServeCommand extends BaseCommand {
       const { config, fileSystem } = this.hay;
 
       const notFoundPage: string = path.resolve(config.values.destination, '404.html');
-      const errorPage: string = <string> fileSystem.find(notFoundPage);
+      const errorPage: string = <string> (<MemoryFileSystem> fileSystem).find(notFoundPage);
 
       res.end(errorPage || 'cannot find file');
     });
