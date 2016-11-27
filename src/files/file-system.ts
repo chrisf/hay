@@ -1,14 +1,15 @@
-// @flow
 import * as fs from 'fs';
 import * as glob from 'glob';
 import * as mkdirp from 'mkdirp';
 import * as path from 'path';
 import * as rimraf from 'rimraf';
 
+import { HayFileSystem } from '../hay';
+
 export type ConvertedPromise = (...args: any[]) => Promise<any>;
 
-export class FileSystem {
-  public glob: ConvertedPromise = this.convertToPromise(glob);
+export class FileSystem implements HayFileSystem {
+  public glob: glob.IGlobStatic = glob.Glob;
   public mkDir: ConvertedPromise = this.convertToPromise(mkdirp);
   public readDir: ConvertedPromise = this.convertToPromise(fs.readdir);
   public unlink: ConvertedPromise = this.convertToPromise(rimraf);
@@ -34,11 +35,11 @@ export class FileSystem {
 
   public async readFile(file: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      fs.readFile(file, 'utf8', (err, content) => {
+      fs.readFile(file, 'binary', (err, content) => {
         if (err) {
           return reject(err);
         }
-        resolve(content.replace(/\r\n/g, '\n'));
+        resolve(content.toString());
       });
     });
   }
