@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   context: process.cwd(),
   entry: {
-    'ngBootstrap': [...ENTRY_FILES, 'angular-bootstrap']
+    // 'ngBootstrap': [...ENTRY_FILES, 'angular-bootstrap']
   },
   output: {
     path: '/',
