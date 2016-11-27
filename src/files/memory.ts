@@ -10,7 +10,7 @@ export interface Folder {
 
 const fs: Folder = {};
 
-function find(directory: string): Folder | string {
+export function find(directory: string): Folder | string {
   const split: string[] = directory.split(path.sep);
 
   return split.reduce((currentDir: Folder, name: string) => {
