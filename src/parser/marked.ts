@@ -31,7 +31,7 @@ export class MarkedTemplateParser extends TemplateParser {
     if (info.fileExt && mdExtensions.includes(info.fileExt)) {
       return new Promise<FileInfo>((resolve, reject) => {
         if (!info.contents) {
-          return reject(`no contents for file ${info.fileName}`);
+          info.contents = '';
         }
         marked(info.contents, (err: any, content: string) => {
           if (err) return reject(err);
