@@ -1,18 +1,22 @@
 import * as commander from 'commander';
 import * as express from 'express';
 import * as tinylr from 'tiny-lr';
+import * as path from 'path';
+import * as mime from 'mime';
+
 
 import { Hay } from '../hay';
 import { BaseCommand } from './base';
 import { BaleCommand } from './bale';
+import { MemoryFileSystem, Folder } from '../files/memory';
 
 export class ServeCommand extends BaseCommand {
   public baleCommand: BaleCommand;
-  public server: express.Express;
-  public hay.config.webpackMiddlewareInstance: any;
 
   constructor(hay: Hay) {
     super(hay);
+
+    hay.fileSystem = new MemoryFileSystem();
 
     this.baleCommand = new BaleCommand(this.hay);
   }
@@ -26,8 +30,6 @@ export class ServeCommand extends BaseCommand {
     let server: any = express();
 
     if (this.hay.config.webpackConfig) {
-      this.hay.reporter.log('');
-
       await this.baleCommand.watch();
 
       const webpack: any = require('webpack');
@@ -36,7 +38,7 @@ export class ServeCommand extends BaseCommand {
 
       let webpackLogger = this.hay.reporter.i({ gutter: { styles: ['cyan'], text: 'webpack' } });
 
-      webpackLogger('initialising\n');
+      webpackLogger('initialising');
 
       let webpackCompilerInstance = webpack(this.hay.config.webpackConfig);
       let webpackMiddlewareInstance = webpackMiddleware(
@@ -44,7 +46,6 @@ export class ServeCommand extends BaseCommand {
         {
           publicPath: '/',
           log: (message: string) => {
-            this.hay.reporter.log('');
             this.hay.reporter.info(message);
           },
           stats: 'errors-only',
@@ -69,7 +70,6 @@ export class ServeCommand extends BaseCommand {
           reload: true,
           log: (message: string) => {
             hmrLogger(message);
-            this.hay.reporter.log('');
           },
           path: '/__webpack_hmr',
           heartbeat: 10 * 1000,
@@ -82,14 +82,58 @@ export class ServeCommand extends BaseCommand {
       this.hay.server = tinylr();
 
       this.hay.server.listen(this.hay.config.values.lrPort, () => {
-        this.hay.reporter.log('');
         reloadLogger('started');
       });
     }
 
     const port: number = this.hay.config.values.port;
 
-    server.use(express.static(this.hay.config.values.destination));
+    server.use((req: any, res: any, next: Function) => {
+      // first of all do not treat the request URL as a directory
+      const url: string = req.url.slice(1);
+      let filePath: string = path.resolve(this.hay.config.values.destination, url);
+      let file: Folder = <Folder> (<MemoryFileSystem> this.hay.fileSystem).find(filePath);
+
+      if (!file) {
+        // file not found, let's treat the URL as a directory
+
+        let dirPath: string = path.resolve(this.hay.config.values.destination, path.basename(req.url));
+        let dir: Folder = <Folder> (<MemoryFileSystem> this.hay.fileSystem).find(dirPath);
+
+        if (!dir) {
+          return next();
+        }
+
+        if (typeof dir === 'string') {
+          res.end(dir, 'binary');
+        }
+
+        if (dir[req.url]) {
+          res.end(dir[req.url], 'binary');
+        }
+      }
+
+      if (typeof file === 'string') {
+        res.writeHead(200, { 'Content-Type': mime.lookup(url) });
+        res.end(file, 'binary');
+      }
+
+      if (file['index.html']) {
+        res.set('Content-Type', mime.lookup('.html'));
+
+        res.end(file['index.html']);
+      }
+    });
+
+    server.use((req: any, res: any) => {
+      const { config, fileSystem } = this.hay;
+
+      const notFoundPage: string = path.resolve(config.values.destination, '404.html');
+      const errorPage: string = <string> fileSystem.find(notFoundPage);
+
+      res.end(errorPage || 'cannot find file');
+    });
+
     server.listen(port);
 
     this.hay.reporter.info(`running local server at http://localhost:${port}`);
