@@ -40,7 +40,7 @@ export interface ConfigValues {
 const values: ConfigValues = {
   autoPermalink: true,
   destination: 'build',
-  engine: 'nunjucks',
+  engine: 'liquid',
   exclude: [],
   highlighter: 'highlight.js',
   layoutsDir: '_layouts',
@@ -71,8 +71,6 @@ export class Config {
   public reporter: Reporter;
   public values: ConfigValues = values;
   public webpackConfig: any;
-  public webpackMiddlewareInstance: any;
-  public webpackCompilerInstance: any;
 
   public async loadConfig(overrideObj: any = {}): Promise<any> {
     let files: ConfigValues[] = await Promise.all(CONFIG_NAMES.map((fileName: string) => this.loadFile(fileName)));
@@ -226,7 +224,7 @@ export class Config {
         try {
           require(file);
           plugin.loaded = true;
-        } catch(e) { }
+        } catch(e) {}
       });
     });
 
