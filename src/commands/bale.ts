@@ -35,7 +35,11 @@ export class BaleCommand extends BaseCommand {
   }
 
   public async run() {
-    await this.hay.fileSystem.unlink(this.hay.config.values.destination);
+    this.hay.reporter.info('starting build');
+
+    const { destination } = this.hay.config.values;
+    await this.hay.fileSystem.mkDir(destination);
+    await this.hay.fileSystem.unlink(destination);
 
     await super.queue([
       this.partialsBuilder,
@@ -45,7 +49,6 @@ export class BaleCommand extends BaseCommand {
     ]);
 
     let time: string = ((Date.now() - this.hay.startTime) / 1000).toFixed(2);
-    this.hay.reporter.log('');
     this.hay.reporter.info(`build took ${time}s\n`);
   }
 
