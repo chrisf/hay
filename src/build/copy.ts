@@ -3,9 +3,8 @@ import * as glob from 'glob';
 
 import { BaseBuilder } from './base';
 import { File, FileInfo, FileParsed } from '../template';
-import { Hay } from '../hay';
+import { Hay, HayFileSystem } from '../hay';
 import { ConfigValues } from '../config';
-import { FileSystem } from '../file-system';
 
 export class CopyBuilder extends BaseBuilder {
   public template: string;
@@ -27,7 +26,7 @@ export class CopyBuilder extends BaseBuilder {
 
     return new Promise<string[]>((resolve, reject) => {
       new glob.Glob(
-        path.join('**/*'),
+        '**/*',
         {
           cwd: config.source,
           nodir: true,
@@ -38,7 +37,7 @@ export class CopyBuilder extends BaseBuilder {
             ...config.exclude
           ]
         },
-        function (err, matches) {
+        function (err: any, matches: string[]) {
           if (err) reject(err);
 
           resolve(matches);
@@ -51,7 +50,7 @@ export class CopyBuilder extends BaseBuilder {
     // let info: FileInfo = await this.hay.engine.extractInfo(file);
     // return this.hay.engine.parse(info);
     const config: ConfigValues =  this.hay.config.values;
-    const fileSystem: FileSystem = this.hay.fileSystem;
+    const fileSystem: HayFileSystem = this.hay.fileSystem;
 
     let mdExtensions: string[] = config.markdownExtensions;
 
@@ -75,7 +74,7 @@ export class CopyBuilder extends BaseBuilder {
       let baseName: string = path.basename(file, path.extname(file));
       let contents: string = await this.hay.fileSystem.readFile(path.resolve(config.source, file));
 
-      let parsedHeader: FileParsed = await await this.hay.engine.parseFile(contents, file);
+      let parsedHeader: FileParsed = await this.hay.engine.parseFile(contents, file);
 
       info.contents = parsedHeader.contents;
       info.options = parsedHeader.options;

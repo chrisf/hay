@@ -112,8 +112,7 @@ export class PostBuilder extends BaseBuilder {
       })
       .on('ready', () => {
         this.WATCH_INITIATED = true;
-        this.hay.reporter.log('');
-        this.hay.reporter.info('waiting for changes..\n');
+        this.hay.reporter.info('waiting for changes..');
       });
   }
 
