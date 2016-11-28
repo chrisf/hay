@@ -36,11 +36,11 @@
     "@types/react": "^0.14.50",
     "@types/react-dom": "^0.14.19",
     "@types/rimraf": "^0.0.28",
+    "@types/uglify-js": "^2.6.28",
     "eslint": "^3.10.2",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
-    "ts-node": "^1.7.0",
-    "typescript": "next"
+    "ts-node": "^1.7.0"
   },
   "dependencies": {
     "@types/chai": "^3.4.34",
@@ -67,6 +67,8 @@
     "rimraf": "^2.5.4",
     "socket.io": "^1.5.1",
     "tiny-lr": "^1.0.3",
+    "typescript": "2.1.1",
+    "uglify-js": "^2.7.4",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "^2.13.2"
