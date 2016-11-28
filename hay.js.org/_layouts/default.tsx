@@ -1,6 +1,24 @@
 import * as React from 'react';
 
 export default class DefaultPage extends React.Component<{ content: React.ReactChildren }, {}> {
+  componentDidMount() {
+    (window as any).GoogleAnalyticsObject = 'ga';
+    (window as any).ga = (window as any).ga || function(...args: any[]) {
+      (window as any).ga.q = (window as any).ga.q || [];
+      (window as any).ga.q.concat(args)
+    };
+    (window as any).ga.l = Date.now();
+
+    let a: HTMLScriptElement = document.createElement('script');
+    let m: HTMLScriptElement = document.getElementsByTagName('script')[0];
+    a.async = true;
+    a.src = 'https://www.google-analytics.com/analytics.js';
+    m.parentNode.insertBefore(a,m);
+
+    (window as any).ga('create', 'UA-87373116-1', 'auto');
+    (window as any).ga('send', 'pageview');
+  }
+
   render() {
     return (
       <html>
