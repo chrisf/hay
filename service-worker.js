@@ -2,7 +2,9 @@ var CACHE_NAME = 'hay-static-cache';
 var urlsToCache = [
   '/css/main.css',
   '/react.min.js',
-  '/react-dom.min.js'
+  '/react-dom.min.js',
+  '/img/trees.jpeg',
+  '/img/hay.jpeg'
 ];
 
 self.addEventListener('install', function (event) {
