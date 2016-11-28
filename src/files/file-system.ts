@@ -9,7 +9,6 @@ import { HayFileSystem } from '../hay';
 export type ConvertedPromise = (...args: any[]) => Promise<any>;
 
 export class FileSystem implements HayFileSystem {
-  public glob: glob.IGlobStatic = glob.Glob;
   public mkDir: ConvertedPromise = this.convertToPromise(mkdirp);
   public readDir: ConvertedPromise = this.convertToPromise(fs.readdir);
   public unlink: ConvertedPromise = this.convertToPromise(rimraf);
