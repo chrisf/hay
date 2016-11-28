@@ -239,7 +239,7 @@ export class Config {
   }
 
   private async loadFile(filename: string): Promise<any> {
-    return new Promise(async(resolve) => {
+    return new Promise(async (resolve) => {
       let loaders: ConfigLoaders = {
         async yml(filename) {
           return new Promise((resolve) => {
