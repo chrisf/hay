@@ -6,5 +6,6 @@
   "engine": "react",
   "layoutExtensions": ["tsx"],
   "postExtensions": ["tsx"],
-  "partialExtensions": ["tsx"]
+  "partialExtensions": ["tsx"],
+  "googleAnalytics": "UA-87373116-1"
 }
