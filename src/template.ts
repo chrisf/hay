@@ -2,15 +2,17 @@ import { Hay } from './hay';
 import * as yaml from 'js-yaml';
 import { ConfigValues } from './config';
 
-const TEMPLATE_HEADER = /^(?:[\n]?---\n)([\s\S]*?)(?:\n---[\n]?)/;
+const TEMPLATE_HEADER = /^(?:\/\*)?(?:[\n]?---\n)([\s\S]*?)(?:\n[\s]*?---[\n]?)(?:\*\/)?/;
 
 export interface File {
-  contents: string,
-  fileName: string,
+  path: string;
+  contents: string;
+  fileName: string;
   namespace?: string;
 }
 
 export interface FileInfo {
+  path: string;
   options?: FileOptions;
   contents?: string;
   fileName?: string;
@@ -52,6 +54,7 @@ export abstract class TemplateEngine {
     let parsedHeader: FileParsed = await this.parseFile(file.contents, file.fileName);
 
     let info: FileInfo = {
+      path: file.path,
       options: parsedHeader.options,
       contents: parsedHeader.contents,
       fileName: file.fileName,
