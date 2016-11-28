@@ -57,6 +57,7 @@ export class CopyBuilder extends BaseBuilder {
     let mdExtensions: string[] = config.markdownExtensions;
 
     let info: FileInfo = {
+      path: path.dirname(path.resolve(config.source, file)),
       fileName: file,
       output: {
         directory: path.dirname(file),
@@ -93,12 +94,12 @@ export class CopyBuilder extends BaseBuilder {
 
       FILE_REGISTRY.set(
         path.resolve(config.source, file),
-        path.resolve(destinationFolder, info.output.fileName)
+        path.resolve(destinationFolder, `${info.shortName}.html`)
       );
 
       await fileSystem.mkDir(destinationFolder);
       await fileSystem.writeFile(
-        path.resolve(destinationFolder, info.output.fileName),
+        path.resolve(destinationFolder, `${info.shortName}.html`),
         output
       );
     } else {
