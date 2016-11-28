@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Logo from './logo';
+import Logo from '../logo';
 import Canvas from './canvas';
 import gradients from './gradients';
 

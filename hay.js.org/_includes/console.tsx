@@ -7,8 +7,8 @@ export default class Console extends React.Component<{}, { activeTab: string }> 
     super(props);
 
     React.Children.forEach(this.props.children, (child: React.ReactElement<any>) => {
-      if (child.props['data-tabName']) {
-        this.tabs.push(child.props['data-tabName'])
+      if (child.props['data-tab']) {
+        this.tabs.push(child.props['data-tab'])
       }
     });
 
@@ -53,7 +53,7 @@ export default class Console extends React.Component<{}, { activeTab: string }> 
         }
         {
           React.Children.map(this.props.children, (child: React.ReactElement<any>) => {
-            if (this.state.activeTab === child.props['data-tabName']) {
+            if (this.state.activeTab === child.props['data-tab']) {
               return child;
             }
             return null;
