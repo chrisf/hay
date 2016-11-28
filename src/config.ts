@@ -15,6 +15,7 @@ export interface ConfigValues {
   destination: string;
   engine: string;
   exclude: string[];
+  googleAnalytics: string;
   highlighter: string;
   markdownExtensions: string[];
   parsers: string[];
@@ -42,6 +43,7 @@ const values: ConfigValues = {
   destination: 'build',
   engine: 'liquid',
   exclude: [],
+  googleAnalytics: '',
   highlighter: 'highlight.js',
   layoutsDir: '_layouts',
   layoutExtensions: ['html'],
