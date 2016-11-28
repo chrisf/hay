@@ -5,7 +5,7 @@ git clean -fxd
 
 cd ../
 hay bale
-cp -R build/* gh-pages/*
+cp -R build/* gh-pages/
 cp -f circle.yml gh-pages/circle.yml
 cd gh-pages
 git add --all
