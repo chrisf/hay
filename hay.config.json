@@ -2,5 +2,9 @@
   "source": "hay.js.org",
   "destination": "build",
   "partialsDir": "_includes",
-  "webpackConfig": "webpack.config.js"
+  "webpackConfig": "webpack.config.js",
+  "engine": "react",
+  "layoutExtensions": ["tsx"],
+  "postExtensions": ["tsx"],
+  "partialExtensions": ["tsx"]
 }
