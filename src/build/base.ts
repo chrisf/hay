@@ -23,6 +23,7 @@ export abstract class BaseBuilder {
       .readFile(path.resolve(this.config.directory, fileName))
       .then((contents: string): File => {
         return {
+          path: this.config.directory,
           fileName,
           contents
         };
